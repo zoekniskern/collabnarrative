@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>POC Collab Narrative</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <canvas id="mainCanvas" width="700" height="500">
+            Please update your browser!
+    </canvas>
+      <div id='colorSelect'>
+        <label>Color of Hood:</label><br/>
+        <select id='colors'>
+          <option>Red</option>
+          <option>Blue</option>
+          <option>Green</option>
+        </select>
+        
+    <!-- <script src='./main.js'></script> -->
+    <!-- <script src='./table.js'></script> -->
+    <script>
+        window.onload = function() {
+            init();
+        };
+
+        //Global Variables
+        var canvas;
+        var ctx;
+        var color;
+        var gender;
+        
+        //Constant Variables
+        var default_color = 'red';
+        var default_gender = "girl";
+
+        document.querySelector('#colors').onchange = function(e){
+                color = e.target.value;
+                ctx.fillStyle = color;
+                //drawback();
+                console.log("fillStyle = " + color);
+        }
+
+        function init(){
+            canvas = document.querySelector('#mainCanvas');
+            ctx = canvas.getContext('2d');
+            color = default_color;
+            gender = default_gender;
+
+            //setting canvas variables
+            ctx.fillStyle = color;
+            
+            //drawback();
+
+            update();
+        }
+
+        function drawback(){
+            ctx.fillRect(0,0,canvas.width, canvas.height);
+        }
+
+        function update(){
+            drawback();
+            requestAnimationFrame(update);
+        }
+    </script>
+  </body>
+</html>
