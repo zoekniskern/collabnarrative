@@ -6,16 +6,33 @@
   </head>
 
   <body>
-    <canvas id="mainCanvas" width="700" height="500">
-            Please update your browser!
-    </canvas>
-      <div id='colorSelect'>
-        <label>Color of Hood:</label><br/>
-        <select id='colors'>
-          <option>Red</option>
-          <option>Blue</option>
-          <option>Green</option>
-        </select>
+        <div id='canvasContainer'>
+            <canvas id="mainCanvas" width="700" height="500">
+                    Please update your browser!
+            </canvas>
+        </div>
+        <div id="attrCur">
+            <!-- SHOW CURRENT ATTRIBUTES FOR TESTING -->
+        </div>
+        <div id="savedResponses">
+                <!-- SHOW CURRENT ATTRIBUTES FOR TESTING -->
+            </div>
+        <div id="prompt">
+            <!-- <label>Color of Hood:</label><br/> -->
+            <p> Once upon a time there was a little
+                <select id='gender'>
+                    <option>boy</option>
+                    <option>girl</option>
+                </select>
+                who wore a 
+                <select id='colors'>
+                    <option>red</option>
+                    <option>blue</option>
+                    <option>green</option>
+                </select>
+                hood. Their name was
+            </p>
+        </div>
         
     <!-- <script src='./main.js'></script> -->
     <!-- <script src='./table.js'></script> -->
@@ -41,6 +58,11 @@
                 console.log("fillStyle = " + color);
         }
 
+        document.querySelector('#gender').onchange = function(e){
+                gender = e.target.value;
+                console.log("gender = " + gender);
+        }
+
         function init(){
             canvas = document.querySelector('#mainCanvas');
             ctx = canvas.getContext('2d');
@@ -59,9 +81,20 @@
             ctx.fillRect(0,0,canvas.width, canvas.height);
         }
 
+        //ANIMATION
         function update(){
             drawback();
             requestAnimationFrame(update);
+
+            createDiv(color, 'color');
+            createDiv(gender, 'gender');
+        }
+
+        //ADDING HTML TO DOC
+        function createDiv(attr, attrDescrip){
+            var div = document.createElement('div');
+            div.innerHTML = '<p>' + 'current' + attrDescrip + ": " + attr + '</p>';
+            document.getElementById('#attrCur').appendChild(div);
         }
     </script>
   </body>
