@@ -3,26 +3,27 @@
   <head>
     <title>POC Collab Narrative</title>
     <meta charset="utf-8">
+    <style>
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        #savedResponses {
+            width: 40%;
+            border: 3px solid gray;
+            margin: 5px;
+            padding: 5px;
+        }
+        .response {
+            padding: 0px 5px 0px 5px;
+            width: 95%;
+            border: 1px solid lightgray;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
   </head>
-
   <body>
-        <div id='canvasContainer'>
-            <canvas id="mainCanvas" width="300" height="100">
-                    Please update your browser!
-            </canvas>
-        </div>
-        <div id="attrCur">
-            <!-- SHOW CURRENT ATTRIBUTES FOR TESTING -->
-            <h5>FOR TESTING PURPOSES</h5>
-            <p>current gender: <span class="curGen"></span></p>
-            <p>current color: <span class="curCol"></span></p>
-            <p>current home: <span class="curHome"></span></p>
-            <p>current setting: <span class="curSet"></span></p>
-            <p>current name: <span class="curName"></span></p>
-        </div>
-        <div id="savedResponses">
-                <!-- SHOW CURRENT ATTRIBUTES FOR TESTING -->
-            </div>
         <div id="prompt">
         </br>
             <h5>PROMPT</h5>
@@ -58,6 +59,33 @@
                 </span>
             </p>
         </div>
+        </br>
+        <div id="response">
+            <h5>WRITE YOUR OWN ENDING:</h5>
+            <textarea id='responseText' name="responseText" cols="40" rows="5"></textarea>
+            <button onclick="addResponse()" value="save name">Save Response</button>
+        </div>
+        </br>
+        <div id='canvasContainer'>
+            <canvas id="mainCanvas" width="500" height="10">
+                    Please update your browser!
+            </canvas>
+        </div>
+        <div class='row'>
+            <h5>SAVED RESPONSES</h5>
+            <div id="savedResponses">
+                    <!-- SHOW CURRENT ATTRIBUTES FOR TESTING -->
+            </div>
+            <div id="attrCur">
+                <!-- SHOW CURRENT ATTRIBUTES FOR TESTING -->
+                <h5>FOR TESTING PURPOSES</h5>
+                <p>current gender: <span class="curGen"></span></p>
+                <p>current color: <span class="curCol"></span></p>
+                <p>current home: <span class="curHome"></span></p>
+                <p>current setting: <span class="curSet"></span></p>
+                <p>current name: <span class="curName"></span></p>
+            </div>
+        </div>
     </body> 
     <!-- <script src='./main.js'></script> -->
     <!-- <script src='./table.js'></script> -->
@@ -79,6 +107,16 @@
 
         var colorList;
         var genderList;
+        var homeList;
+        var settingList;
+        var basketList;
+        var wolfList;
+        var nameList;
+
+        //SAVING PROMPTS
+        var allResponses = [];
+        var promptIdCounter = 0;
+        var responseDiv = document.querySelector('#savedResponses');
         
         //Constant Variables
         var default_color = 'red';
@@ -99,6 +137,7 @@
         wolfList = document.getElementsByClassName("curWolf");
         nameList = document.getElementsByClassName("curName");
 
+        //ADDING EVENT HANDLERS FOR THE VARIABLES
         document.querySelector('#colors').onchange = function(e){
                 color = e.target.value;
                 ctx.fillStyle = color;
@@ -125,6 +164,7 @@
                 console.log("setting = " + setting);
         }
 
+        //INIT
         function init(){
             canvas = document.querySelector('#mainCanvas');
             ctx = canvas.getContext('2d');
@@ -143,7 +183,8 @@
 
             update();
         }
-
+        
+        //Square for testing
         function drawback(){
             ctx.fillRect(0,0,canvas.width, canvas.height);
         }
@@ -153,17 +194,34 @@
             drawback();
             requestAnimationFrame(update);
 
+            //drawResponses();
             //createDiv(color, 'color');
             //createDiv(gender, 'gender');
         }
 
         //ADDING HTML TO DOC
-        function createDiv(attr, attrDescrip){
+        function createDiv(parent, attr, likes, id){
             var div = document.createElement('div');
-            div.innerHTML = '<p>' + 'current' + attrDescrip + ": " + attr + '</p>';
+            // div.onclick = function(){
+            //     allResponses[id].likes++;
+            //     document.getElementById(this.id).innerHTML = allResponses[id].likes;
+            // }
+            div.className = 'response';
+            var p1 = document.createElement('p');
+            p1.innerHTML = attr;
+            var p2 = document.createElement('p');
+            p2.className = id + 'likes';
+            p2.innerHTML = likes;
+            p2.onclick = function(){
+                allResponses[id].likes++;
+                //document.getElementById(this.id).innerHTML = allResponses[id].likes;
+                console.log(allResponses[id]);
+            }
+
+            div.appendChild(p1);
+            div.appendChild(p2);
             
-            //console.dir(parentDiv);
-            parentDiv.appendChild(div);
+            parent.appendChild(div);
         }
 
         //ADDING HTML TO DOC attempt 2
@@ -201,8 +259,8 @@
             }
         }
 
+        //Updating the name
         function updateName() {
-
             name = document.getElementById('name').value;
             console.log('name: ' + name);
 
@@ -211,5 +269,45 @@
                 nameList[i].innerHTML = name;
             }
         }
+
+        //RESPONSE HANDLING CODE
+        function Response(id,text, time, likes) {
+            this.id = id;
+            this.text = text;
+            this.time = time;
+            this.likes = likes;
+        }
+
+        function addResponse(){
+            var input = document.getElementById('responseText').value;
+            var when = new Date();
+            var likes = 0;
+
+            newResponse = new Response(promptIdCounter,input, when, likes);
+            allResponses.push(newResponse);
+
+            createDiv(responseDiv,input,likes,promptIdCounter);
+
+            //console.dir(allResponses);
+            //drawResponses();
+            promptIdCounter++;
+            document.getElementById('responseText').value = "";
+        }
+
+        /*
+        function drawResponses(){
+            responseDiv.innerHTML = "";
+
+            for(var o; o < allResponses.length + 1; o++){
+                var o_text = allResponses[o].text;
+                var o_likes = allResponses[o].likes;
+                var o_id = allResponses[o].id;
+                createDiv(responseDiv,o_text,o_likes,o_id);
+            }
+
+            console.log('draw response ran');
+            console.dir(allResponses);
+        }
+        */
     </script>
 </html>
