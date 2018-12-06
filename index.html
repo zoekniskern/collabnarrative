@@ -7,36 +7,61 @@
 
   <body>
         <div id='canvasContainer'>
-            <canvas id="mainCanvas" width="700" height="500">
+            <canvas id="mainCanvas" width="300" height="100">
                     Please update your browser!
             </canvas>
         </div>
         <div id="attrCur">
             <!-- SHOW CURRENT ATTRIBUTES FOR TESTING -->
+            <h5>FOR TESTING PURPOSES</h5>
+            <p>current gender: <span class="curGen"></span></p>
+            <p>current color: <span class="curCol"></span></p>
+            <p>current home: <span class="curHome"></span></p>
+            <p>current setting: <span class="curSet"></span></p>
+            <p>current name: <span class="curName"></span></p>
         </div>
         <div id="savedResponses">
                 <!-- SHOW CURRENT ATTRIBUTES FOR TESTING -->
             </div>
         <div id="prompt">
+        </br>
+            <h5>PROMPT</h5>
             <!-- <label>Color of Hood:</label><br/> -->
             <p> Once upon a time there was a little
                 <select id='gender'>
-                    <option>boy</option>
                     <option>girl</option>
+                    <option>boy</option>
                 </select>
-                who wore a 
+                who lived in a
+                <select id='home'>
+                    <option>village</option>
+                    <option>castle</option>
+                    <option>prison</option>
+                </select> 
+                near a 
+                <select id='setting'>
+                    <option>forest</option>
+                    <option>jungle</option>
+                    <option>desert</option>
+                </select>
+                .
+                Whenever the <span class="curGen"></span> went out, they wore a
                 <select id='colors'>
                     <option>red</option>
                     <option>blue</option>
                     <option>green</option>
                 </select>
-                hood. Their name was
+                riding cloak, so everyone in the <span class="curHome"></span> called them
+                <span>
+                    <input id="name" type="text" name="name" placeholder="Little Red Riding Hood">
+                    <button onclick="updateName()" value="save name">Save Name</button>
+                </span>
             </p>
         </div>
-        
+    </body> 
     <!-- <script src='./main.js'></script> -->
     <!-- <script src='./table.js'></script> -->
-    <script>
+    <script type="text/javascript">
         window.onload = function() {
             init();
         };
@@ -46,21 +71,58 @@
         var ctx;
         var color;
         var gender;
+        var home;
+        var setting;
+        var basketContents;
+        var wolf;
+        var name;
+
+        var colorList;
+        var genderList;
         
         //Constant Variables
         var default_color = 'red';
         var default_gender = "girl";
+        var default_home = 'village';
+        var default_setting = 'forest';
+        var default_basketContents = 'muffins';
+        var default_wolf = "wolf";
+        var default_name = 'Little Red Riding Hood';
+
+        //var parentDiv = document.querySelector('#attrCur');
+        //LIST OF ALL MENTIONS OF VARIABLES
+        colorList = document.getElementsByClassName("curCol");
+        genderList = document.getElementsByClassName("curGen");
+        homeList = document.getElementsByClassName("curHome");
+        settingList = document.getElementsByClassName("curSet");
+        basketList = document.getElementsByClassName("curBask");
+        wolfList = document.getElementsByClassName("curWolf");
+        nameList = document.getElementsByClassName("curName");
 
         document.querySelector('#colors').onchange = function(e){
                 color = e.target.value;
                 ctx.fillStyle = color;
                 //drawback();
+                updateCurAttributes();
                 console.log("fillStyle = " + color);
         }
 
         document.querySelector('#gender').onchange = function(e){
                 gender = e.target.value;
+                updateCurAttributes();
                 console.log("gender = " + gender);
+        }
+
+        document.querySelector('#home').onchange = function(e){
+                home = e.target.value;
+                updateCurAttributes();
+                console.log("home = " + home);
+        }
+
+        document.querySelector('#setting').onchange = function(e){
+                setting = e.target.value;
+                updateCurAttributes();
+                console.log("setting = " + setting);
         }
 
         function init(){
@@ -68,11 +130,16 @@
             ctx = canvas.getContext('2d');
             color = default_color;
             gender = default_gender;
+            home = default_home;
+            setting = default_setting;
+            name = default_name;
 
             //setting canvas variables
             ctx.fillStyle = color;
-            
+            updateCurAttributes();
             //drawback();
+            //createDiv(color, 'color');
+            //createDiv(gender, 'gender');
 
             update();
         }
@@ -86,16 +153,63 @@
             drawback();
             requestAnimationFrame(update);
 
-            createDiv(color, 'color');
-            createDiv(gender, 'gender');
+            //createDiv(color, 'color');
+            //createDiv(gender, 'gender');
         }
 
         //ADDING HTML TO DOC
         function createDiv(attr, attrDescrip){
             var div = document.createElement('div');
             div.innerHTML = '<p>' + 'current' + attrDescrip + ": " + attr + '</p>';
-            document.getElementById('#attrCur').appendChild(div);
+            
+            //console.dir(parentDiv);
+            parentDiv.appendChild(div);
+        }
+
+        //ADDING HTML TO DOC attempt 2
+        function updateCurAttributes(){
+            // var g = document.querySelector('.curGen');
+            // var c = document.querySelector('.curCol');
+
+            // g.innerHTML = gender;
+            // c.innerHTML = gender;
+
+            //console.dir(colorList);
+
+            //Colors
+            for(var i=0; i < colorList.length; i++){
+                colorList[i].innerHTML = color;
+            }
+            //Genders
+            for(var i=0; i < genderList.length; i++){
+                genderList[i].innerHTML = gender;
+            }
+
+            //Home
+            for(var i=0; i < homeList.length; i++){
+                homeList[i].innerHTML = home;
+            }
+
+            //Setting
+            for(var i=0; i < settingList.length; i++){
+                settingList[i].innerHTML = setting;
+            }
+
+            //Name
+            for(var i=0; i < nameList.length; i++){
+                nameList[i].innerHTML = name;
+            }
+        }
+
+        function updateName() {
+
+            name = document.getElementById('name').value;
+            console.log('name: ' + name);
+
+            //Name
+            for(var i=0; i < nameList.length; i++){
+                nameList[i].innerHTML = name;
+            }
         }
     </script>
-  </body>
 </html>
