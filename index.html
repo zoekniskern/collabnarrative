@@ -21,6 +21,10 @@
             display: flex;
             justify-content: space-between;
         }
+        .responseTitle {
+            width: 50%;
+            overflow-wrap: normal;
+        }
     </style>
   </head>
   <body>
@@ -208,18 +212,23 @@
             // }
             div.className = 'response';
             var p1 = document.createElement('p');
+            p1.className = 'responseTitle';
             p1.innerHTML = attr;
             var p2 = document.createElement('p');
-            p2.className = id + 'likes';
+            p2.id = id;
             p2.innerHTML = likes;
-            p2.onclick = function(){
+
+            var button = document.createElement('button');
+            button.innerHTML="like";
+            button.onclick = function(){
                 allResponses[id].likes++;
-                //document.getElementById(this.id).innerHTML = allResponses[id].likes;
                 console.log(allResponses[id]);
+                document.getElementById(id).innerHTML = allResponses[id].likes;
             }
 
             div.appendChild(p1);
             div.appendChild(p2);
+            div.appendChild(button);
             
             parent.appendChild(div);
         }
