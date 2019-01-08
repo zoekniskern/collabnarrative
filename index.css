@@ -1,0 +1,14 @@
+#flexmain {
+    display: flex;
+    flex-direction: row;
+}
+#left {
+    width: 50%;
+}
+#right {
+    width: 50%;
+}
+.form {
+    border: 2px gray solid;
+    margin: 5px;
+}
