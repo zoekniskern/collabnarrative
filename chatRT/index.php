@@ -79,18 +79,41 @@
              });
 
     	});
+
+      /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+
     </script>
 
 </head>
 
 <body onload="setInterval('chat.update()', 1000)">
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="writer.php" target="_blank" style="color:orange;">The Writer</a>
+      <a href="reader.php" target="_blank" style="color:orange;">The Reader</a>
+      <a href="viewer.php" target="_blank" style="color:orange;">The Viewer</a>
+    </div>
+
+    <div id="main">
+      <button class="openbtn" onclick="openNav()"><img src="https://image.flaticon.com/icons/png/128/25/25442.png"  style="width:20px;height:20px; alt="backend button""></button>
+    </div>
 
     <div id="page-wrap">
 
-        <h2>The Dispatcher</h2>
-        <p><a href="writer.php" target="_blank" style="color:orange;">The Writer</a></p>
-        <p><a href="reader.php" target="_blank" style="color:orange;">The Reader</a></p>
-        <p><a href="viewer.php" target="_blank" style="color:orange;">The Viewer</a></p>
+        <h1 align="center">COLLABORATIVE NARRATIVE</h1>
+        <div class="wrapper">
+        <button class="BeginButton" onclick="location.href='writer.php'" target="_blank" style="width:300px;height:20px; alt="start button""> Begin</button>
+        </div>
 
     </div>
 
