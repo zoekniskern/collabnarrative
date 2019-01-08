@@ -5,29 +5,16 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Chat</title>
+    <title>Collab Narrative</title>
 
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="question.css" type="text/css" />
 
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="chat.js"></script>
+    <script type="text/javascript" src = "writer.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
-
-        // ask user for name with popup prompt
-        /*
-        var name = prompt("Enter your chat name:", "Guest");
-
-        // default name is 'Guest'
-    	if (!name || name === ' ') {
-    	   name = "Guest";
-    	}
-
-    	// strip tags
-    	name = name.replace(/(<([^>]+)>)/ig,"");
-      */
-    	// display name on page
-    	$("#name-area").html("You are: <span>" + name + "</span>");
 
     	// kick off chat
         var chat =  new Chat();
@@ -55,70 +42,40 @@
     		 																																																});
     		 // watch textarea for release of key press
     		 $('.sendie').click(function(e) {
-
     			  //if (e.keyCode == 13) {
-
                     var text = $("input[name='values']:checked").val();
     				//var maxLength = $(this).attr("maxlength");
-                    var length = text.length;
-
+                    //var length = text.length;
                     // send
                   //if (length <= maxLength + 1) {
-
     			        chat.send(text, name);
     			        $(this).val("");
-
                   //  } else {
-
     				//	$(this).val(text.substring(0, maxLength));
-
     			//	}
-
-
     			  //}
              });
 
     	});
     </script>
-
 </head>
 
 <body onload="setInterval('chat.update()', 1000)">
-
-    <div id="page-wrap">
-
-        <h2>The Writer</h2>
-
-        <p id="name-area"></p>
-
-        <div id="chat-wrap"><div id="chat-area"></div></div>
-        <form>
-          <p>WHAT CITY IS IT?</p>
-          <div>
-            <input type="radio" id="valuesChoice1"
-             name="values" value="paris">
-            <label for="valuesChoice1">paris</label>
-
-            <input type="radio" id="valuesChoice2"
-             name="values" value="rome">
-            <label for="valuesChoice2">rome</label>
-
-            <input type="radio" id="valuesChoice3"
-             name="values" value="nyc">
-            <label for="valuesChoice3">nyc</label>
-          </div>
-          <div>
-            <button type="submit" class="sendie" >Submit</button>
-          </div>
-        </form>
-
-        <!-- <form id="send-message-area">
-            <p>Your message: </p>
-            <textarea id="sendie" maxlength = '100' ></textarea>
-        </form> -->
-
+<div id="chat-wrap"><div id="chat-area"></div></div>
+    <div id="flexmain">
+        <div id="right">
+                <h1> 1 </h1>
+                <div id="question1">
+                </div>
+                <button id="submit1" class="sendie" onclick="nextQuestion()">Next Question</button>
+        </div>
+        <div id="left">
+                <h1> 2 </h1>
+                <div id="question2">
+                </div>
+                <button id="submit2" class="sendie" onclick="nextQuestion()">Next Question</button>
+        </div>
     </div>
-
 </body>
 
 </html>

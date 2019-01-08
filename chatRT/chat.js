@@ -52,7 +52,7 @@ function updateChat(){
 			   success: function(data){
 				   if(data.text){
 						for (var i = 0; i < data.text.length; i++) {
-                            $('#chat-area').append($("<p>"+ data.text[i] +"</p>"));
+                            //$('#chat-area').append($("<p>"+ data.text[i] +"</p>"));
                             $('#chat-mot').html($("<p>"+ data.text[i] +"</p>"));
 
                                 //$( "#chat-area:contains('paris')" ).css( "color", "red" );
@@ -66,7 +66,7 @@ function updateChat(){
                                   //alert('paris');
                                 }
                                 else {
-                                  alert('rien');
+                                  //alert('rien');
                                 }
                         }
 				   }
