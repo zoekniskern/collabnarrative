@@ -67,3 +67,10 @@ h2                              { color: #fa9f00; font: 30px Helvetica, Sans-Ser
 .BeginButton {
     position: relative;
 }
+p {
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
