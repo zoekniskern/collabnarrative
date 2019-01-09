@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Kranky|Thasadith');
+
 body {
    font-size: 1.5em;
+   font-family: 'Thasadith', sans-serif;
 }
 
 /* QUESTIONS */
@@ -9,14 +12,24 @@ body {
 }
 #left {
     width: 50%;
+    height: 95vh;
+    padding: 1%;
+    border-left: 5px lightgray solid;
 }
 #right {
     width: 50%;
+    height: 95vh;
+    padding: 1%;
 }
 .form {
-    border: 2px gray solid;
-    margin: 5px;
+    /* border: 2px gray solid; */
+    display: flex;
+    justify-content: center;
 }
+#question1, #question2 {
+    margin: 40px 0px 40px 0px;
+}
+
 /* PROMPT */
 #prompt{
     position: absolute;
@@ -25,6 +38,94 @@ body {
     background-color: white;
     z-index: 2;
     display: none;
-    padding: 40px;
+    padding: 40px 10% 40px 10%;
     font-size: 1.5em;
 }
+
+input[type="radio"]{
+    display:none;
+ }
+ 
+ input[type="radio"] + label{
+     height: 330px;
+     width: 240px;
+     display:inline-block;
+     padding: 0 0 0 0px;
+     cursor:pointer;
+     /* background-image: url("images/redriding_button_wolf.png"); */
+     background-size: contain;
+     background-repeat: no-repeat;
+ }
+
+ .sendie, #write {
+    color: black;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 1.5em;
+ }
+
+ .sendie:hover {
+    background-color: black;
+    color: white;
+}
+
+#write:hover {
+    background-color: black;
+    color: white;
+}
+
+.author {
+    font-size: 3em;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+#wait {
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    color: lightgray;
+    font-family: 'Kranky', cursive;
+}
+
+ /* HOME */
+ input[type="radio"] + .woods{
+    background-image: url("images/redriding_button_woods.png");
+ }
+ input[type="radio"] + .beach{
+    background-image: url("images/redriding_button_beach.png");
+ }
+ input[type="radio"] + .paris{
+    background-image: url("images/redriding_button_paris.png");
+ }
+
+ /* COLOR */
+ input[type="radio"] + .red{
+    background-image: url("images/redriding_button_red.png");
+ }
+ input[type="radio"] + .blue{
+    background-image: url("images/redriding_button_blue.png");
+ }
+ input[type="radio"] + .purple{
+    background-image: url("images/redriding_button_purple.png");
+ }
+
+ /* CREATURE */
+ input[type="radio"] + .wolf{
+    background-image: url("images/redriding_button_wolf.png");
+ }
+ input[type="radio"] + .bear{
+    background-image: url("images/redriding_button_bear.png");
+ }
+ input[type="radio"] + .unicorn{
+    background-image: url("images/redriding_button_unicorn.png");
+ }
+
+ 
+ input[type="radio"]:checked + label
+ {
+     /* background-color: gray; */
+     box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.75);
+ }

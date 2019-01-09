@@ -110,14 +110,16 @@
 
     <div id="page-wrap">
 
-        <h1 align="center">COLLABORATIVE NARRATIVE</h1>
+        <h1 id="title" align="center">COLLABORATIVE NARRATIVE</h1>
         <div class="wrapper">
-        <p align="center" >
-          This is a collaborative narrative written by you and the other people
-          visiting this exhibition. <br> You will be asked questions and your answers will
-          tell a new and unique version of <br> the story of Little Red Riding Hood.
-        </p>
-        <button class="BeginButton" onclick="location.href='writer.php'" target="_blank" style="width:300px;height:20px; alt="start button""> Begin</button>
+            <div id="storybook">
+            </div>
+            <p>
+            This is a collaborative narrative written by you and the other people
+            visiting this exhibition. <br> You will be asked questions and your answers will
+            tell a new and unique version of <br> the story of Little Red Riding Hood.
+            </p>
+            <button class="BeginButton" onclick="location.href='writer.php'" target="_blank" alt="start button""> Begin</button>
         </div>
 
     </div>

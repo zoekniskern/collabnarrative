@@ -64,44 +64,37 @@
 <div id="chat-wrap"><div id="chat-area"></div></div>
     <div id="flexmain">
         <div id="right">
-                <h1> 1 </h1>
+                <h1 class="author"> Author 1 </h1>
                 <div id="question1">
                 </div>
                 <button id="submit1" class="sendie" onclick="nextQuestion()">Next Question</button>
         </div>
         <div id="left">
-                <h1> 2 </h1>
+                <h1 class="author"> Author 2 </h1>
                 <div id="question2">
                 </div>
                 <button id="submit2" class="sendie" onclick="nextQuestion()">Next Question</button>
         </div>
     </div>
     <div id="prompt">
+        <h1 class="author"> Your Story </h1>
         <p>Once upon a time, there was a little girl who lived in a village near the <span class="home"></span>. She often wore a <span class="color"></span> riding cloak, so everyone called her Little <span class="color capital"></span> Riding Hood.</p>
-
-        <br/>
 
         <p>One morning, her mother asked Little <span class="color capital"></span> Riding Hood to visit her grandmother. She packed a basket of cookies. On the way through the <span class="home"></span> to her grandmother’s house, a <span class="creature"></span> appeared. "What are you doing out here, little girl?" the <span class="creature"></span> asked in a friendly voice.</p>
 
-        <br/>
-
         <p>"I'm on my way to see my Grandma." Little <span class="color capital"></span> Riding Hood replied. Then she realized how late she was and quickly excused herself. Meanwhile, the <span class="creature"></span> took a shortcut and arrived at Grandma's and knocked lightly at the door. </p>
-
-        <br/>
 
         <p>Grandma, thinking that the knock was her granddaughter,let the <span class="creature"></span> inside. Poor Granny did not have time to say another word, before the <span class="creature"></span> gobbled her up! Then the <span class="creature"></span> poked through Granny's wardrobe to find a nightgown. He added a frilly sleeping cap, and dabbed some of Granny's perfume behind his ears.</p>
 
-        <br/>
-
         <p>A few minutes later, <span class="color capital"></span> Riding Hood knocked on the door. The <span class="creature"></span> jumped into bed and pulled the covers over his nose. "Who is it?"</p>
-
-        <br/>
 
         <p>"It's me, Little <span class="color capital"></span> Riding Hood."</p>
 
+        <p>"Do come in, my dear," croaked the <span class="creature"></span>.</p>
+
         <br/>
 
-        <p>"Do come in, my dear," croaked the <span class="creature"></span>.</p>
+        <button id="write" onclick="">Finish the story!</button>
     </div>
 <!-- Chat wrap because it might error if deleted -->
 </body>

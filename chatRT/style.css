@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Kranky|Thasadith');
+
 *                               { margin: 0; padding: 0; }
-body                            { font: 12px "Lucida Grande", Sans-Serif; }
+body                            { font-family: 'Thasadith', sans-serif; }
 h2                              { color: #fa9f00; font: 30px Helvetica, Sans-Serif; margin: 0 0 10px 0; }
 #collage {
 
@@ -60,13 +62,44 @@ h2                              { color: #fa9f00; font: 30px Helvetica, Sans-Ser
   background-color: #444;
 }
 
+#title {
+  font-family: 'Kranky', cursive;
+  font-size: 5em;
+}
+
+#page-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .wrapper {
     text-align: center;
 }
 
-.BeginButton {
-    position: relative;
+#storybook {
+  background-image: url(images/placeholder.jpg);
+  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
+
+.BeginButton {
+    color: black;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 1.5em;
+    width: 300px;
+ }
+
+ .BeginButton:hover {
+    background-color: black;
+    color: white;
+}
+
 p {
   display: block;
   margin-top: 2em;

@@ -70,16 +70,19 @@ function makeButtons(jsonObj, number) {
     //-- create input for each option
     for(var y=0; y<options.length; y++) {
         var label = document.createElement("label");
+        label.setAttribute('id', options[y] + "-lab");
+        label.setAttribute('class', options[y]);
+        label.setAttribute('for', options[y]);
+
         input = document.createElement("input");
-
         input.setAttribute("type", "radio");
-
         input.setAttribute('name', "values");
         input.setAttribute('value', options[y]);
+        input.setAttribute('id', options[y]);
 
-        label.appendChild(input);
-        label.innerHTML += "<span>" + options[y] + "</span><br>";
-        
+        // label.appendChild(input);
+        // label.innerHTML += "<span>" + options[y] + "</span><br>";
+        form.appendChild(input);
         form.appendChild(label);
     }
 
@@ -87,13 +90,13 @@ function makeButtons(jsonObj, number) {
         //if question is even, give to player 1
         htmlDestination = document.getElementById("question1");
         div1.innerHTML = "";
-        div2.innerHTML = "Please Wait";
+        div2.innerHTML = "<div id='wait'><p>Please Wait</p></div>";
         button1.style.display = "block";
         button2.style.display = "none";
     } else {
         //if question is odd, give to player 2
         htmlDestination = document.getElementById("question2");
-        div1.innerHTML = "Please Wait";
+        div1.innerHTML = "<div id='wait'><p>Please Wait</p></div>";
         div2.innerHTML = "";
         button1.style.display = "none";
         button2.style.display = "block";
