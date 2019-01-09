@@ -110,7 +110,7 @@
 
     <div id="page-wrap">
 
-        <h1 id="title" align="center">COLLABORATIVE NARRATIVE</h1>
+        <h1 id="title" align="center">Collaborative Narrative</h1>
         <div class="wrapper">
             <div id="storybook">
             </div>

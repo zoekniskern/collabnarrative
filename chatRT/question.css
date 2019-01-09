@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Kranky|Thasadith');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300i|Playfair+Display');
 
 body {
    font-size: 1.5em;
-   font-family: 'Thasadith', sans-serif;
+   font-family: 'Open Sans', sans-serif;
 }
 
 /* QUESTIONS */
@@ -39,7 +39,7 @@ body {
     z-index: 2;
     display: none;
     padding: 40px 10% 40px 10%;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 #promptSide {
@@ -79,7 +79,7 @@ input[type="radio"]{
     border: 2px solid black;
     border-radius: 6px;
     padding: 10px;
-    font-size: 1.5em;
+    font-size: 1em;
  }
 
  .button:hover {
@@ -88,17 +88,16 @@ input[type="radio"]{
 }
 
 .author {
-    font-size: 3em;
-    font-style: italic;
+    font-size: 2em;
     margin-top: 10px;
 }
 
 #wait {
     display: flex;
     justify-content: center;
-    font-size: 3em;
+    font-size: 2em;
     color: lightgray;
-    font-family: 'Kranky', cursive;
+    font-family: 'Playfair Display', serif;
 }
 
  /* HOME */
@@ -151,5 +150,4 @@ input[type="radio"]{
     z-index: 3;
     display: none;
     padding: 40px 10% 40px 10%;
-    font-size: 1.5em;
 }
