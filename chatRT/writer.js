@@ -22,6 +22,7 @@ var currentQuestion = 0;
 var totalquestions;
 var whichVar;
 var promptDiv; // = document.getElementById("prompt");
+var endingDiv;
 
 //Story Variables
 var homeList;
@@ -182,6 +183,12 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+//SHOW ENDING DIV
+function showEnding(){
+    endingDiv.style.display = "block";
+    promptDiv.style.display = "none";
+}
+
 
 //INIT FUNCTION
 function init() {
@@ -189,6 +196,7 @@ function init() {
     color = default_color;
     creature = default_creature;
     promptDiv = document.getElementById("prompt");
+    endingDiv = document.getElementById("ending");
     loadJSON(function(response) {
      // Parse JSON string into object
        var actual_JSON = JSON.parse(response);
@@ -203,4 +211,17 @@ function init() {
 
 //RUN INIT FUNCTION
 window.onload = init();
+
+//SIDE NAV
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("promptSide").style.width = "500px";
+    document.getElementById("main").style.marginLeft = "500px";
+  }
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("promptSide").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
  
