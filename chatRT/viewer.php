@@ -87,14 +87,12 @@
 </head>
 
 <body onload="setInterval('chat.update()', 1000)">
-    <h2>The Viewer</h2>
+
 
     <canvas id="canvas" width=innerWidth height=innerHeight ></canvas>
+<!--
 
-        <div id="collage">
-
-        </div>
-    <p id="name-area"></p>
+    <p id="name-area"></p> -->
 
     <div id="chat-wrap">
       <div id="chat-area"> </div>
