@@ -59,8 +59,7 @@ function updateChat(){
                                 //if($(this).is(':contains("paris")') == true) alert('paris');
                                 // if($('#chat-mot').text().match('woods'||'beach'||'paris')){
                                 if($('#chat-mot').text().match('woods')){
-                                    $('#collage').append($("<img style='position:absolute; top:0px; left:0px; opacity:0.3;' src='https://owlt.org/media/djcatalog2/images/item/0/kurtz-woods-natural-area_f.JPG'>"));
-                                    //alert('paris');
+                                  $('#collage').append($("<img style='position:absolute; top:0px; left:0px; opacity:0.3;' src='https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/France/Paris/paris-vintage-car.jpg?imwidth=450'>"));
                                     var img = new Image();
 
                                     // User Variables - customize these to change the image being scrolled, its
@@ -70,8 +69,8 @@ function updateChat(){
                                     var CanvasXSize = window.innerWidth;
                                     var CanvasYSize = window.innerHeight;
                                     var speed = 30; // lower is faster
-                                    var scale = 1.05;
-                                    var y = -4.5; // vertical offset
+                                    var scale = 1;
+                                    var y = 0; // vertical offset
 
                                     // Main program
 
@@ -84,25 +83,25 @@ function updateChat(){
                                     var ctx;
 
                                     img.onload = function() {
-                                        imgW = img.width;
-                                        imgH = img.height;
+                                        imgW = window.innerWidth/4;
+                                        imgH = window.innerHeight/4;
 
-                                        if (imgW > CanvasXSize) {
-                                            // image larger than canvas
-                                            x = CanvasXSize - imgW;
-                                        }
-                                        if (imgW > CanvasXSize) {
-                                            // image width larger than canvas
+                                        // if (imgW > CanvasXSize) {
+                                        //     // image larger than canvas
+                                        //     x = CanvasXSize - imgW;
+                                        // }
+                                        // if (imgW > CanvasXSize) {
+                                        //     // image width larger than canvas
                                             clearX = imgW;
-                                        } else {
-                                            clearX = CanvasXSize;
-                                        }
-                                        if (imgH > CanvasYSize) {
-                                            // image height larger than canvas
+                                        // } else {
+                                        //     clearX = CanvasXSize;
+                                        // }
+                                        // if (imgH > CanvasYSize) {
+                                        //     // image height larger than canvas
                                             clearY = imgH;
-                                        } else {
-                                            clearY = CanvasYSize;
-                                        }
+                                        // } else {
+                                        //     clearY = CanvasYSize;
+                                        // }
 
                                         // get canvas context
                                         ctx = document.getElementById('canvas').getContext('2d');
@@ -112,45 +111,59 @@ function updateChat(){
                                     }
 
                                     function draw() {
-                                        ctx.clearRect(0, 0, clearX, clearY); // clear the canvas
+                                      ctx.clearRect(0, 0, clearX, clearY); // clear the canvas
 
-                                        // if image is <= Canvas Size
-                                        if (imgW <= CanvasXSize) {
-                                            // reset, start from beginning
-                                            if (x > CanvasXSize) {
-                                                x = -imgW + x;
-                                            }
-                                            // draw additional image1
-                                            if (x > 0) {
-                                                ctx.drawImage(img, -imgW + x, y, imgW, imgH);
-                                            }
-                                            // draw additional image2
-                                            if (x - imgW > 0) {
-                                                ctx.drawImage(img, -imgW * 2 + x, y, imgW, imgH);
-                                            }
-                                        }
+                                      // if image is <= Canvas Size
+                                      if (imgW <= CanvasXSize) {
+                                          // reset, start from beginning
+                                          if (x > CanvasXSize) {
+                                              x = -imgW + x;
+                                          }
 
-                                        // image is > Canvas Size
-                                        else {
-                                            // reset, start from beginning
-                                            if (x > (CanvasXSize)) {
-                                                x = CanvasXSize - imgW;
-                                            }
-                                            // draw aditional image
-                                            if (x > (CanvasXSize-imgW)) {
-                                                ctx.drawImage(img, x - imgW + 1, y, imgW, imgH);
-                                            }
-                                        }
-                                        // draw image
-                                        ctx.drawImage(img, x, y,imgW, imgH);
-                                        // amount to move
-                                        x += dx;
+                                          var count = 1;
+
+                                          // while (true) {
+
+
+                                          // draw additional image1
+                                          if (x > 0) {
+                                              ctx.drawImage(img, -imgW * count + x, y, imgW, imgH);
+                                          }
+                                        //   count++
+                                        // }
+                                          // draw additional image2
+                                          if (x - imgW > 0) {
+                                              ctx.drawImage(img, -imgW * 2 + x, y, imgW, imgH);
+                                          }
+                                          // draw additional image2
+                                          if (x - imgW > 0) {
+                                              ctx.drawImage(img, -imgW * 3 + x, y, imgW, imgH);
+                                          }
+                                          // draw additional image2
+                                          if (x - imgW > 0) {
+                                              ctx.drawImage(img, -imgW * 4 + x, y, imgW, imgH);
+                                          }
+                                      }
+
+                                      // image is > Canvas Size
+                                      else {
+                                          // reset, start from beginning
+                                          if (x > (CanvasXSize)) {
+                                              x = CanvasXSize - imgW;
+                                          }
+                                          // draw aditional image
+                                          if (x > (CanvasXSize-imgW)) {
+                                              ctx.drawImage(img, x - imgW + 1, y, imgW, imgH);
+                                          }
+                                      }
+                                      // draw image
+                                      ctx.drawImage(img, x, y,imgW, imgH);
+                                      // amount to move
+                                      x += dx;
                                     }
-
-
-                                  }
+                                }
                                 else if($('#chat-mot').text().match('beach')){
-                                    $('#collage').append($("<img style='position:absolute; top:0px; left:0px; opacity:0.3;' src='http://static.asiawebdirect.com/m/phuket/portals/kosamui-com/homepage/chaweng-beach/pagePropertiesImage/chaweng.jpg.jpg'>"));
+                                  $('#collage').append($("<img style='position:absolute; top:0px; left:0px; opacity:0.3;' src='https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/France/Paris/paris-vintage-car.jpg?imwidth=450'>"));
                                     var img = new Image();
 
                                     // User Variables - customize these to change the image being scrolled, its
@@ -160,8 +173,8 @@ function updateChat(){
                                     var CanvasXSize = window.innerWidth;
                                     var CanvasYSize = window.innerHeight;
                                     var speed = 30; // lower is faster
-                                    var scale = 1.05;
-                                    var y = -4.5; // vertical offset
+                                    var scale = 1;
+                                    var y = 0; // vertical offset
 
                                     // Main program
 
@@ -174,25 +187,25 @@ function updateChat(){
                                     var ctx;
 
                                     img.onload = function() {
-                                        imgW = img.width;
-                                        imgH = img.height;
+                                        imgW = window.innerWidth/4;
+                                        imgH = window.innerHeight/4;
 
-                                        if (imgW > CanvasXSize) {
-                                            // image larger than canvas
-                                            x = CanvasXSize - imgW;
-                                        }
-                                        if (imgW > CanvasXSize) {
-                                            // image width larger than canvas
+                                        // if (imgW > CanvasXSize) {
+                                        //     // image larger than canvas
+                                        //     x = CanvasXSize - imgW;
+                                        // }
+                                        // if (imgW > CanvasXSize) {
+                                        //     // image width larger than canvas
                                             clearX = imgW;
-                                        } else {
-                                            clearX = CanvasXSize;
-                                        }
-                                        if (imgH > CanvasYSize) {
-                                            // image height larger than canvas
+                                        // } else {
+                                        //     clearX = CanvasXSize;
+                                        // }
+                                        // if (imgH > CanvasYSize) {
+                                        //     // image height larger than canvas
                                             clearY = imgH;
-                                        } else {
-                                            clearY = CanvasYSize;
-                                        }
+                                        // } else {
+                                        //     clearY = CanvasYSize;
+                                        // }
 
                                         // get canvas context
                                         ctx = document.getElementById('canvas').getContext('2d');
@@ -202,39 +215,55 @@ function updateChat(){
                                     }
 
                                     function draw() {
-                                        ctx.clearRect(0, 0, clearX, clearY); // clear the canvas
+                                      ctx.clearRect(0, 0, clearX, clearY); // clear the canvas
 
-                                        // if image is <= Canvas Size
-                                        if (imgW <= CanvasXSize) {
-                                            // reset, start from beginning
-                                            if (x > CanvasXSize) {
-                                                x = -imgW + x;
-                                            }
-                                            // draw additional image1
-                                            if (x > 0) {
-                                                ctx.drawImage(img, -imgW + x, y, imgW, imgH);
-                                            }
-                                            // draw additional image2
-                                            if (x - imgW > 0) {
-                                                ctx.drawImage(img, -imgW * 2 + x, y, imgW, imgH);
-                                            }
-                                        }
+                                      // if image is <= Canvas Size
+                                      if (imgW <= CanvasXSize) {
+                                          // reset, start from beginning
+                                          if (x > CanvasXSize) {
+                                              x = -imgW + x;
+                                          }
 
-                                        // image is > Canvas Size
-                                        else {
-                                            // reset, start from beginning
-                                            if (x > (CanvasXSize)) {
-                                                x = CanvasXSize - imgW;
-                                            }
-                                            // draw aditional image
-                                            if (x > (CanvasXSize-imgW)) {
-                                                ctx.drawImage(img, x - imgW + 1, y, imgW, imgH);
-                                            }
-                                        }
-                                        // draw image
-                                        ctx.drawImage(img, x, y,imgW, imgH);
-                                        // amount to move
-                                        x += dx;
+                                          var count = 1;
+
+                                          // while (true) {
+
+
+                                          // draw additional image1
+                                          if (x > 0) {
+                                              ctx.drawImage(img, -imgW * count + x, y, imgW, imgH);
+                                          }
+                                        //   count++
+                                        // }
+                                          // draw additional image2
+                                          if (x - imgW > 0) {
+                                              ctx.drawImage(img, -imgW * 2 + x, y, imgW, imgH);
+                                          }
+                                          // draw additional image2
+                                          if (x - imgW > 0) {
+                                              ctx.drawImage(img, -imgW * 3 + x, y, imgW, imgH);
+                                          }
+                                          // draw additional image2
+                                          if (x - imgW > 0) {
+                                              ctx.drawImage(img, -imgW * 4 + x, y, imgW, imgH);
+                                          }
+                                      }
+
+                                      // image is > Canvas Size
+                                      else {
+                                          // reset, start from beginning
+                                          if (x > (CanvasXSize)) {
+                                              x = CanvasXSize - imgW;
+                                          }
+                                          // draw aditional image
+                                          if (x > (CanvasXSize-imgW)) {
+                                              ctx.drawImage(img, x - imgW + 1, y, imgW, imgH);
+                                          }
+                                      }
+                                      // draw image
+                                      ctx.drawImage(img, x, y,imgW, imgH);
+                                      // amount to move
+                                      x += dx;
                                     }
                                   }
                                 else if($('#chat-mot').text().match('paris')){
@@ -301,27 +330,27 @@ function updateChat(){
 
                                             var count = 1;
 
-                                            while (true) {
+                                            // while (true) {
 
 
                                             // draw additional image1
                                             if (x > 0) {
                                                 ctx.drawImage(img, -imgW * count + x, y, imgW, imgH);
                                             }
-                                            count++
-                                          }
-                                            // // draw additional image2
-                                            // if (x - imgW > 0) {
-                                            //     ctx.drawImage(img, -imgW * 2 + x, y, imgW, imgH);
-                                            // }
-                                            // // draw additional image2
-                                            // if (x - imgW > 0) {
-                                            //     ctx.drawImage(img, -imgW * 3 + x, y, imgW, imgH);
-                                            // }
-                                            // // draw additional image2
-                                            // if (x - imgW > 0) {
-                                            //     ctx.drawImage(img, -imgW * 4 + x, y, imgW, imgH);
-                                            // }
+                                          //   count++
+                                          // }
+                                            // draw additional image2
+                                            if (x - imgW > 0) {
+                                                ctx.drawImage(img, -imgW * 2 + x, y, imgW, imgH);
+                                            }
+                                            // draw additional image2
+                                            if (x - imgW > 0) {
+                                                ctx.drawImage(img, -imgW * 3 + x, y, imgW, imgH);
+                                            }
+                                            // draw additional image2
+                                            if (x - imgW > 0) {
+                                                ctx.drawImage(img, -imgW * 4 + x, y, imgW, imgH);
+                                            }
                                         }
 
                                         // image is > Canvas Size
