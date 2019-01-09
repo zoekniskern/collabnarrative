@@ -101,7 +101,7 @@
 
         <br/>
 
-        <p>"Do come in, my dear," croaked the wolf.</p>
+        <p>"Do come in, my dear," croaked the <span class="creature"></span>.</p>
     </div>
 <!-- Chat wrap because it might error if deleted -->
 </body>
