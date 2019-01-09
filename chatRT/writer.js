@@ -17,7 +17,29 @@ function loadJSON(callback) {
  }
 
 //GLOBAL VARIABLES
+//Counters
 var currentQuestion = 0;
+var totalquestions;
+var whichVar;
+var promptDiv; // = document.getElementById("prompt");
+
+//Story Variables
+var homeList;
+var colorList;
+var creatureList;
+
+var default_home = 'woods';
+var default_color = "red";
+var default_creature = 'wolf';
+var home = default_home;
+var color = default_color;
+var creature = default_creature;
+
+//LIST OF ALL MENTIONS OF VARIABLES
+homeList = document.getElementsByClassName("home");
+colorList = document.getElementsByClassName("color");
+creatureList = document.getElementsByClassName("creature");
+
 
 //PRINT RADIO BUTTONS BASED ON QUESTION #
 function makeButtons(jsonObj, number) {
@@ -30,6 +52,7 @@ function makeButtons(jsonObj, number) {
     var button1 = document.getElementById("submit1");
     var button2 = document.getElementById("submit2");
 
+    totalquestions = json.length;
     var currentQuestion = json[number];
     var options = currentQuestion.options;
 
@@ -79,14 +102,75 @@ function makeButtons(jsonObj, number) {
     htmlDestination.appendChild(form);
 }
 
-function nextQuestion(){
-    currentQuestion+=1;
-    console.log(currentQuestion);
-    init();
+//ASSIGN RADIO VALUE TO CORRECT VARIABLE
+function setQuestVar(){
+    switch(currentQuestion){
+        case 0:
+            home = saveAnswer();
+            break;
+        case 1:
+            color = saveAnswer();
+            break;
+        case 2:
+            creature = saveAnswer();
+            break;
+        default:
+            break;
+    }
+
+    console.log("home = " + home);
+    console.log("color = " + color);
+    console.log("creature = " + creature);
 }
+
+//ADVANCE QUESTION NUMBER
+function nextQuestion(){
+    if(currentQuestion<totalquestions-1){
+        setQuestVar();
+        currentQuestion+=1;
+        console.log(currentQuestion);
+        init();
+    } else {
+        setQuestVar();
+        console.log('next section');
+        updateAttr()
+        promptDiv.style.display = "block";
+    }
+}
+
+//GET RADIO BUTTON VALUE
+function saveAnswer(){
+    var value = document.getElementsByName('values');
+    for(var i = 0; i < value.length; i++){
+        if(value[i].checked){
+            whichVar = value[i].value;
+        }
+    }
+    return whichVar;
+}
+
+//REPLACE SPAN WITH VARIABLE VALUE IN PROMPT
+function updateAttr(){
+    //Home
+    for(var i=0; i < homeList.length; i++){
+        homeList[i].innerHTML = home;
+    }
+
+    //Colors
+    for(var i=0; i < colorList.length; i++){
+        colorList[i].innerHTML = color;
+    }
+
+    //Creature
+    for(var i=0; i < creatureList.length; i++){
+        creatureList[i].innerHTML = creature;
+    }
+}
+
 
 //INIT FUNCTION
 function init() {
+    promptDiv = document.getElementById("prompt");
     loadJSON(function(response) {
      // Parse JSON string into object
        var actual_JSON = JSON.parse(response);

@@ -76,6 +76,34 @@
                 <button id="submit2" class="sendie" onclick="nextQuestion()">Next Question</button>
         </div>
     </div>
+    <div id="prompt">
+        <p>Once upon a time, there was a little girl who lived in a village near the <span class="home"></span>. She often wore a <span class="color"></span> riding cloak, so everyone called her Little <span class="color"></span> Riding Hood.</p>
+
+        <br/>
+
+        <p>One morning, her mother asked Little <span class="color"></span> Riding Hood to visit her grandmother. She packed a basket of cookies. On the way through the <span class="home"></span> to her grandmother’s house, a <span class="creature"></span> appeared. "What are you doing out here, little girl?" the <span class="creature"></span> asked in a friendly voice.</p>
+
+        <br/>
+
+        <p>"I'm on my way to see my Grandma." Little <span class="color"></span> Riding Hood replied. Then she realized how late she was and quickly excused herself. Meanwhile, the <span class="creature"></span> took a shortcut and arrived at Grandma's and knocked lightly at the door. </p>
+
+        <br/>
+
+        <p>Grandma, thinking that the knock was her granddaughter,let the <span class="creature"></span> inside. Poor Granny did not have time to say another word, before the <span class="creature"></span> gobbled her up! Then the <span class="creature"></span> poked through Granny's wardrobe to find a nightgown. He added a frilly sleeping cap, and dabbed some of Granny's perfume behind his ears.</p>
+
+        <br/>
+
+        <p>A few minutes later, <span class="color"></span> Riding Hood knocked on the door. The <span class="creature"></span> jumped into bed and pulled the covers over his nose. "Who is it?"</p>
+
+        <br/>
+
+        <p>"It's me, Little <span class="color"></span> Riding Hood."</p>
+
+        <br/>
+
+        <p>"Do come in, my dear," croaked the wolf.</p>
+    </div>
+<!-- Chat wrap because it might error if deleted -->
 </body>
 
 </html>

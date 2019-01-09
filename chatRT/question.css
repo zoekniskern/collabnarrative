@@ -1,3 +1,8 @@
+body {
+   font-size: 1.5em;
+}
+
+/* QUESTIONS */
 #flexmain {
     display: flex;
     flex-direction: row;
@@ -11,4 +16,15 @@
 .form {
     border: 2px gray solid;
     margin: 5px;
+}
+/* PROMPT */
+#prompt{
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: white;
+    z-index: 2;
+    display: none;
+    padding: 40px;
+    font-size: 1.5em;
 }
