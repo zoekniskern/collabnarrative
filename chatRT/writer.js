@@ -31,15 +31,15 @@ var creatureList;
 var default_home = 'woods';
 var default_color = "red";
 var default_creature = 'wolf';
-var home = default_home;
-var color = default_color;
-var creature = default_creature;
+var home;
+var color;
+var creature;
 
 //LIST OF ALL MENTIONS OF VARIABLES
 homeList = document.getElementsByClassName("home");
 colorList = document.getElementsByClassName("color");
+colorCapList = document.getElementsByClassName("capital");
 creatureList = document.getElementsByClassName("creature");
-
 
 //PRINT RADIO BUTTONS BASED ON QUESTION #
 function makeButtons(jsonObj, number) {
@@ -60,7 +60,7 @@ function makeButtons(jsonObj, number) {
     title.innerHTML = currentQuestion.question;
 
     //--create label
-    var label = document.createElement("label");
+    //var label = document.createElement("label");
     //--create form
     var form = document.createElement("form");
     //--set form name
@@ -69,6 +69,7 @@ function makeButtons(jsonObj, number) {
 
     //-- create input for each option
     for(var y=0; y<options.length; y++) {
+        var label = document.createElement("label");
         input = document.createElement("input");
 
         input.setAttribute("type", "radio");
@@ -161,15 +162,29 @@ function updateAttr(){
         colorList[i].innerHTML = color;
     }
 
+    for(var i=0; i < colorCapList.length; i++){
+        colorCapList[i].innerHTML = capitalizeFirstLetter(color);
+        console.log("capitalize ran");
+    }
+
     //Creature
     for(var i=0; i < creatureList.length; i++){
         creatureList[i].innerHTML = creature;
     }
 }
 
+//CAPITALIZE FIRST LETTER OF WORD
+//https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 
 //INIT FUNCTION
 function init() {
+    home = default_home;
+    color = default_color;
+    creature = default_creature;
     promptDiv = document.getElementById("prompt");
     loadJSON(function(response) {
      // Parse JSON string into object
