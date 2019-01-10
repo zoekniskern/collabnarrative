@@ -560,6 +560,7 @@ blue
 bear
 woods
 red
+<<<<<<< HEAD
 beach
 blue
 bear
@@ -574,3 +575,8 @@ beach
 red
 beach
 red
+=======
+woods
+red
+wolf
+>>>>>>> 28c9cf39752d05de659a87d15c0b3ac37609ea6f
