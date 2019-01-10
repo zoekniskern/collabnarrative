@@ -4,20 +4,17 @@ Created by: Kenrick Beckett
 Name: Chat Engine
 */
 
-//GLOBAL VARIABLES
 var instanse = false;
 var state;
 var mes;
 var file;
-var wid = 1024;
-var hei = 768;
-var widRed = (603);
-var heiRed = (794);
+var wid = 1280;
+var hei = 650;
+var widRed = (603/2);
+var heiRed = (794/2);
 var beach = 'images/beach.png';
 var woods = 'images/woods.png';
 var paris = 'images/paris.png';
-
-//Draws characters
 function charLoad(ImagSrc, xloc, yloc){
   var img = new Image();
 
@@ -26,12 +23,16 @@ function charLoad(ImagSrc, xloc, yloc){
 
   //img.src = 'images/red_left.png'
   img.src = ImagSrc;
+  var CanvasXSize = wid;
+  var CanvasYSize = hei;
   var speed = 30; // lower is faster
-  //var scale = 1;
+  var scale = 1;
   var y = yloc;
   //var y = 250; // vertical offset
 
+
   // Main program
+
   var dx = 0.75;
   var imgW;
   var imgH;
@@ -42,8 +43,8 @@ function charLoad(ImagSrc, xloc, yloc){
   var ctx;
 
   img.onload = function() {
-      //imgW = widRed;
-      //imgH = heiRed;
+      imgW = widRed;
+      imgH = heiRed;
 
       // if (imgW > CanvasXSize) {
       //     // image larger than canvas
@@ -64,6 +65,7 @@ function charLoad(ImagSrc, xloc, yloc){
 
       // get canvas context
       canvas = document.getElementById('canvasRed');
+
       ctx = canvas.getContext('2d');
 
       canvas.width = wid;
@@ -77,15 +79,17 @@ function charLoad(ImagSrc, xloc, yloc){
     ctx.clearRect(0, 0, clearX, clearY); // clear the canvas
 
     // if image is <= Canvas Size
-    if (imgW <= wid) {
+    if (imgW <= CanvasXSize) {
         // reset, start from beginning
-        if (x > wid) {
+        if (x > CanvasXSize) {
             x = -imgW + x;
         }
 
         var count = 1;
 
         // while (true) {
+
+
         // draw additional image1
         if (x > 0) {
             //ctx.drawImage(img, -imgW * count + x, y, imgW, imgH);
@@ -122,7 +126,13 @@ function charLoad(ImagSrc, xloc, yloc){
     // amount to move
     // x += dx;
   }
-}//end of char load
+
+
+
+
+
+
+}
 function ImgCycle (ImgSrc){
 
     var img = new Image();
@@ -232,8 +242,7 @@ function ImgCycle (ImgSrc){
       x += dx;
     }
   }
-
-
+  
 /////////////////CHAT STUFF BELOW
 
 
