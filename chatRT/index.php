@@ -99,9 +99,9 @@
 <body onload="setInterval('chat.update()', 1000)">
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="writer.php" target="_blank" style="color:orange;">The Writer</a>
-      <a href="reader.php" target="_blank" style="color:orange;">The Reader</a>
-      <a href="viewer.php" target="_blank" style="color:orange;">The Viewer</a>
+      <a href="writer.php" target="_blank">The Writer</a>
+      <a href="reader.php" target="_blank">The Reader</a>
+      <a href="viewer.php" target="_blank">The Viewer</a>
     </div>
 
     <div id="main">

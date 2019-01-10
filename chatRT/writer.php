@@ -66,19 +66,19 @@
         <div id="promptRef">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <h4>For Reference:</h4>
-            <p>Once upon a time, there was a little girl who lived in a village near the <span class="home"></span>. She often wore a <span class="color"></span> riding cloak, so everyone called her Little <span class="color capital"></span> Riding Hood.</p>
+            <p>Once upon a time, there was a little girl who lived in a village near the <span class="home var"></span>. She often wore a <span class="color var"></span> riding cloak, so everyone called her Little <span class="color capital var"></span> Riding Hood.</p>
 
-            <p>One morning, her mother asked Little <span class="color capital"></span> Riding Hood to visit her grandmother. She packed a basket of cookies. On the way through the <span class="home"></span> to her grandmother’s house, a <span class="creature"></span> appeared. "What are you doing out here, little girl?" the <span class="creature"></span> asked in a friendly voice.</p>
+            <p>One morning, her mother asked Little <span class="color capital var"></span> Riding Hood to visit her grandmother. She packed a basket of cookies. On the way through the <span class="home var"></span> to her grandmother’s house, a <span class="creature var"></span> appeared. "What are you doing out here, little girl?" the <span class="creature var"></span> asked in a friendly voice.</p>
 
-            <p>"I'm on my way to see my Grandma." Little <span class="color capital"></span> Riding Hood replied. Then she realized how late she was and quickly excused herself. Meanwhile, the <span class="creature"></span> took a shortcut and arrived at Grandma's and knocked lightly at the door. </p>
+            <p>"I'm on my way to see my Grandma." Little <span class="color capital var"></span> Riding Hood replied. Then she realized how late she was and quickly excused herself. Meanwhile, the <span class="creature var"></span> took a shortcut and arrived at Grandma's and knocked lightly at the door. </p>
 
-            <p>Grandma, thinking that the knock was her granddaughter,let the <span class="creature"></span> inside. Poor Granny did not have time to say another word, before the <span class="creature"></span> gobbled her up! Then the <span class="creature"></span> poked through Granny's wardrobe to find a nightgown. He added a frilly sleeping cap, and dabbed some of Granny's perfume behind his ears.</p>
+            <p>Grandma, thinking that the knock was her granddaughter,let the <span class="creature var"></span> inside. Poor Granny did not have time to say another word, before the <span class="creature var"></span> gobbled her up! Then the <span class="creature var"></span> poked through Granny's wardrobe to find a nightgown. He added a frilly sleeping cap, and dabbed some of Granny's perfume behind his ears.</p>
 
-            <p>A few minutes later, <span class="color capital"></span> Riding Hood knocked on the door. The <span class="creature"></span> jumped into bed and pulled the covers over his nose. "Who is it?"</p>
+            <p>A few minutes later, <span class="color capital var"></span> Riding Hood knocked on the door. The <span class="creature var"></span> jumped into bed and pulled the covers over his nose. "Who is it?"</p>
 
-            <p>"It's me, Little <span class="color capital"></span> Riding Hood."</p>
+            <p>"It's me, Little <span class="color capital var"></span> Riding Hood."</p>
 
-            <p>"Do come in, my dear," croaked the <span class="creature"></span>.</p>
+            <p>"Do come in, my dear," croaked the <span class="creature var"></span>.</p>
 
             <br/>
         </div>
@@ -99,19 +99,19 @@
     </div>
     <div id="prompt">
         <h1 class="author"> Your Story </h1>
-        <p>Once upon a time, there was a little girl who lived in a village near the <span class="home"></span>. She often wore a <span class="color"></span> riding cloak, so everyone called her Little <span class="color capital"></span> Riding Hood.</p>
+        <p>Once upon a time, there was a little girl who lived in a village near the <span class="home var"></span>. She often wore a <span class="color var"></span> riding cloak, so everyone called her Little <span class="color capital var"></span> Riding Hood.</p>
 
-        <p>One morning, her mother asked Little <span class="color capital"></span> Riding Hood to visit her grandmother. She packed a basket of cookies. On the way through the <span class="home"></span> to her grandmother’s house, a <span class="creature"></span> appeared. "What are you doing out here, little girl?" the <span class="creature"></span> asked in a friendly voice.</p>
+        <p>One morning, her mother asked Little <span class="color capital var"></span> Riding Hood to visit her grandmother. She packed a basket of cookies. On the way through the <span class="home var"></span> to her grandmother’s house, a <span class="creature var"></span> appeared. "What are you doing out here, little girl?" the <span class="creature var"></span> asked in a friendly voice.</p>
 
-        <p>"I'm on my way to see my Grandma." Little <span class="color capital"></span> Riding Hood replied. Then she realized how late she was and quickly excused herself. Meanwhile, the <span class="creature"></span> took a shortcut and arrived at Grandma's and knocked lightly at the door. </p>
+        <p>"I'm on my way to see my Grandma." Little <span class="color capital var"></span> Riding Hood replied. Then she realized how late she was and quickly excused herself. Meanwhile, the <span class="creature var"></span> took a shortcut and arrived at Grandma's and knocked lightly at the door. </p>
 
-        <p>Grandma, thinking that the knock was her granddaughter,let the <span class="creature"></span> inside. Poor Granny did not have time to say another word, before the <span class="creature"></span> gobbled her up! Then the <span class="creature"></span> poked through Granny's wardrobe to find a nightgown. He added a frilly sleeping cap, and dabbed some of Granny's perfume behind his ears.</p>
+        <p>Grandma, thinking that the knock was her granddaughter,let the <span class="creature var"></span> inside. Poor Granny did not have time to say another word, before the <span class="creature var"></span> gobbled her up! Then the <span class="creature var"></span> poked through Granny's wardrobe to find a nightgown. He added a frilly sleeping cap, and dabbed some of Granny's perfume behind his ears.</p>
 
-        <p>A few minutes later, <span class="color capital"></span> Riding Hood knocked on the door. The <span class="creature"></span> jumped into bed and pulled the covers over his nose. "Who is it?"</p>
+        <p>A few minutes later, <span class="color capital var"></span> Riding Hood knocked on the door. The <span class="creature var"></span> jumped into bed and pulled the covers over his nose. "Who is it?"</p>
 
-        <p>"It's me, Little <span class="color capital"></span> Riding Hood."</p>
+        <p>"It's me, Little <span class="color capital var"></span> Riding Hood."</p>
 
-        <p>"Do come in, my dear," croaked the <span class="creature"></span>.</p>
+        <p>"Do come in, my dear," croaked the <span class="creature var"></span>.</p>
 
         <br/>
 
@@ -122,7 +122,7 @@
 
     <div id="ending">
         <div id="main">
-        <button class="openbtn openPrompt" onclick="openNav()"><img src="https://image.flaticon.com/icons/png/128/25/25442.png"  style="width:20px;height:20px; alt="backend button""></button>
+        <button class="openbtn openPrompt" onclick="openNav()"><h3>See the Prompt</h3></button>
         </div>
         <h1 class="author"> Write Your Own Ending: </h1>
         <p>Take a moment and discuss with your co-author how you would like the story to end. Type the result into the box below!</p>

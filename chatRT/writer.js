@@ -58,6 +58,7 @@ function makeButtons(jsonObj, number) {
     var options = currentQuestion.options;
 
     var title = document.createElement("h3");
+    var br = document.createElement("br");
     title.innerHTML = currentQuestion.question;
 
     //--create label
@@ -104,6 +105,7 @@ function makeButtons(jsonObj, number) {
     }
     htmlDestination.innerHTML = "";
     htmlDestination.appendChild(title);
+    htmlDestination.appendChild(br);
     htmlDestination.appendChild(form);
 }
 

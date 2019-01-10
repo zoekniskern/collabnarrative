@@ -3,6 +3,8 @@
 body {
    font-size: 1.5em;
    font-family: 'Open Sans', sans-serif;
+   background-color: #fff4e8;
+   color: #807469;
 }
 
 /* QUESTIONS */
@@ -14,7 +16,7 @@ body {
     width: 50%;
     height: 95vh;
     padding: 1%;
-    border-left: 5px lightgray solid;
+    border-left: 1px #a89888 solid;
 }
 #right {
     width: 50%;
@@ -35,7 +37,7 @@ body {
     position: absolute;
     top:0;
     left:0;
-    background-color: white;
+    background-color: #fff4e8;
     z-index: 2;
     display: none;
     padding: 40px 10% 40px 10%;
@@ -51,6 +53,11 @@ body {
 #promptRef {
     padding: 15px;
     padding-bottom: 40px;
+}
+
+.var {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .openPrompt {
@@ -74,71 +81,143 @@ input[type="radio"]{
  }
 
  .button {
-    color: black;
+    color: #211508;
     background-color: transparent;
-    border: 2px solid black;
+    border: 2px solid #211508;
     border-radius: 6px;
     padding: 10px;
     font-size: 1em;
  }
 
  .button:hover {
-    background-color: black;
+    background-color: #211508;
     color: white;
 }
 
 .author {
     font-size: 2em;
-    margin-top: 10px;
+    margin-top: 50px;
+    color: #211508;
+    font-family: 'Playfair Display', serif;
 }
 
 #wait {
     display: flex;
     justify-content: center;
     font-size: 2em;
-    color: lightgray;
+    color: #a89888;
     font-family: 'Playfair Display', serif;
 }
 
+/* //////////////////////////////////////////////////////////// */
+/* REGULAR */
  /* HOME */
  input[type="radio"] + .woods{
-    background-image: url("images/redriding_button_woods.png");
+    background-image: url("images/button_woods.png");
  }
  input[type="radio"] + .beach{
-    background-image: url("images/redriding_button_beach.png");
+    background-image: url("images/button_beach.png");
  }
  input[type="radio"] + .paris{
-    background-image: url("images/redriding_button_paris.png");
+    background-image: url("images/button_paris.png");
  }
 
  /* COLOR */
  input[type="radio"] + .red{
-    background-image: url("images/redriding_button_red.png");
+    background-image: url("images/button_red.png");
  }
  input[type="radio"] + .blue{
-    background-image: url("images/redriding_button_blue.png");
+    background-image: url("images/button_blue.png");
  }
  input[type="radio"] + .purple{
-    background-image: url("images/redriding_button_purple.png");
+    background-image: url("images/button_purple.png");
  }
 
  /* CREATURE */
  input[type="radio"] + .wolf{
-    background-image: url("images/redriding_button_wolf.png");
+    background-image: url("images/button_wolf.png");
  }
  input[type="radio"] + .bear{
-    background-image: url("images/redriding_button_bear.png");
+    background-image: url("images/button_bear.png");
  }
  input[type="radio"] + .unicorn{
-    background-image: url("images/redriding_button_unicorn.png");
+    background-image: url("images/button_unicorn.png");
  }
 
- 
- input[type="radio"]:checked + label
- {
-     /* background-color: gray; */
-     box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.75);
+ /* //////////////////////////////////////////////////////////// */
+ /* HOVER */
+ /* HOME */
+ input[type="radio"] + .woods:hover{
+    background-image: url("images/button_woods_hover.png");
  }
+ input[type="radio"] + .beach:hover{
+    background-image: url("images/button_beach_hover.png");
+ }
+ input[type="radio"] + .paris:hover{
+    background-image: url("images/button_paris_hover.png");
+ }
+
+ /* COLOR */
+ input[type="radio"] + .red:hover{
+    background-image: url("images/button_red_hover.png");
+ }
+ input[type="radio"] + .blue:hover{
+    background-image: url("images/button_blue_hover.png");
+ }
+ input[type="radio"] + .purple:hover{
+    background-image: url("images/button_purple_hover.png");
+ }
+
+ /* CREATURE */
+ input[type="radio"] + .wolf:hover{
+    background-image: url("images/button_wolf_hover.png");
+ }
+ input[type="radio"] + .bear:hover{
+    background-image: url("images/button_bear_hover.png");
+ }
+ input[type="radio"] + .unicorn:hover{
+    background-image: url("images/button_unicorn_hover.png");
+ }
+
+ /* //////////////////////////////////////////////////////////// */
+ /* CHECKED */
+ /* HOME */
+ input[type="radio"]:checked + .woods{
+    background-image: url("images/button_woods_active.png");
+ }
+ input[type="radio"]:checked + .beach{
+    background-image: url("images/button_beach_active.png");
+ }
+ input[type="radio"]:checked + .paris{
+    background-image: url("images/button_paris_active.png");
+ }
+
+ /* COLOR */
+ input[type="radio"]:checked + .red{
+    background-image: url("images/button_red_active.png");
+ }
+ input[type="radio"]:checked + .blue{
+    background-image: url("images/button_blue_active.png");
+ }
+ input[type="radio"]:checked + .purple{
+    background-image: url("images/button_purple_active.png");
+ }
+
+ /* CREATURE */
+ input[type="radio"]:checked + .wolf{
+    background-image: url("images/button_wolf_active.png");
+ }
+ input[type="radio"]:checked + .bear{
+    background-image: url("images/button_bear_active.png");
+ }
+ input[type="radio"]:checked + .unicorn{
+    background-image: url("images/button_unicorn_active.png");
+ }
+
+
+
+
+ 
 
  /* ENDING */
  #ending{
@@ -146,7 +225,7 @@ input[type="radio"]{
     top:0;
     left:0;
     height: 90%;
-    background-color: white;
+    background-color: #fff4e8;
     z-index: 3;
     display: none;
     padding: 40px 10% 40px 10%;
