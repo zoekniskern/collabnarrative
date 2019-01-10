@@ -8,14 +8,16 @@ var instanse = false;
 var state;
 var mes;
 var file;
-var wid = 1280;
-var hei = 650;
-var widRed = (603/2);
-var heiRed = (794/2);
+var wid = 2048;
+var hei = 1536/2;
+var widRed = (616);
+var heiRed = (755);
 var beach = 'images/beach.png';
 var woods = 'images/woods.png';
 var paris = 'images/paris.png';
-function charLoad(ImagSrc, xloc, yloc){
+
+
+function charLoad(ImagSrc, xloc){
   var img = new Image();
 
   // User Variables - customize these to change the image being scrolled, its
@@ -27,17 +29,11 @@ function charLoad(ImagSrc, xloc, yloc){
   var CanvasYSize = hei;
   var speed = 30; // lower is faster
   var scale = 1;
-  var y = yloc;
-  //var y = 250; // vertical offset
-
-
-  // Main program
 
   var dx = 0.75;
   var imgW;
   var imgH;
   var x = xloc;
-  //var x = 550;
   var clearX;
   var clearY;
   var ctx;
@@ -46,25 +42,11 @@ function charLoad(ImagSrc, xloc, yloc){
       imgW = widRed;
       imgH = heiRed;
 
-      // if (imgW > CanvasXSize) {
-      //     // image larger than canvas
-      //     x = CanvasXSize - imgW;
-      // }
-      // if (imgW > CanvasXSize) {
-      //     // image width larger than canvas
-          clearX = imgW;
-      // } else {
-      //     clearX = CanvasXSize;
-      // }
-      // if (imgH > CanvasYSize) {
-      //     // image height larger than canvas
-          clearY = imgH;
-      // } else {
-      //     clearY = CanvasYSize;
-      // }
-
+      clearX = imgW;
+      clearY = imgH;
+        
       // get canvas context
-      canvas = document.getElementById('canvasRed');
+      canvas = document.getElementById('canvas');
 
       ctx = canvas.getContext('2d');
 
@@ -72,67 +54,21 @@ function charLoad(ImagSrc, xloc, yloc){
       canvas.height = hei;
       ctx.strokeStyle = "#FF0000";
       // set refresh rate
-      return setInterval(draw, speed);
+      requestAnimationFrame(draw);
   }
 
   function draw() {
     ctx.clearRect(0, 0, clearX, clearY); // clear the canvas
 
-    // if image is <= Canvas Size
-    if (imgW <= CanvasXSize) {
-        // reset, start from beginning
-        if (x > CanvasXSize) {
-            x = -imgW + x;
-        }
+    var y = hei - img.height/2;
+    ctx.drawImage(img, x, y, img.width/2, img.height/2);
 
-        var count = 1;
-
-        // while (true) {
-
-
-        // draw additional image1
-        if (x > 0) {
-            //ctx.drawImage(img, -imgW * count + x, y, imgW, imgH);
-        }
-      //   count++
-      // }
-        // // draw additional image2
-        // if (x - imgW > 0) {
-        //     ctx.drawImage(img, -imgW * 2 + x, y, imgW, imgH);
-        // }
-        // // draw additional image2
-        // if (x - imgW > 0) {
-        //     ctx.drawImage(img, -imgW * 3 + x, y, imgW, imgH);
-        // }
-        // // draw additional image2
-        // if (x - imgW > 0) {
-        //     ctx.drawImage(img, -imgW * 4 + x, y, imgW, imgH);
-        // }
-    }
-
-    // image is > Canvas Size
-    else {
-        // // reset, start from beginning
-        // if (x > (CanvasXSize)) {
-        //     x = CanvasXSize - imgW;
-        // }
-        // // draw aditional image
-        // if (x > (CanvasXSize-imgW)) {
-        //     ctx.drawImage(img, x - imgW + 1, y, imgW, imgH);
-        // }
-    }
-    // draw image
-    ctx.drawImage(img, x, y,imgW, imgH);
     // amount to move
-    // x += dx;
+    requestAnimationFrame(draw);
   }
+}//end of Char Load
 
 
-
-
-
-
-}
 function ImgCycle (ImgSrc){
 
     var img = new Image();
@@ -160,26 +96,11 @@ function ImgCycle (ImgSrc){
     img.onload = function() {
         imgW = wid;
         imgH = hei;
-
-        // if (imgW > CanvasXSize) {
-        //     // image larger than canvas
-        //     x = CanvasXSize - imgW;
-        // }
-        // if (imgW > CanvasXSize) {
-        //     // image width larger than canvas
-            clearX = imgW;
-        // } else {
-        //     clearX = CanvasXSize;
-        // }
-        // if (imgH > CanvasYSize) {
-        //     // image height larger than canvas
-            clearY = imgH;
-        // } else {
-        //     clearY = CanvasYSize;
-        // }
+        clearX = imgW;
+        clearY = imgH;
 
         // get canvas context
-        canvas = document.getElementById('canvas');
+        canvas = document.getElementById('canvasRed');
 
         ctx = canvas.getContext('2d');
 
@@ -187,7 +108,8 @@ function ImgCycle (ImgSrc){
         canvas.height = hei;
         ctx.strokeStyle = "#FF0000";
         // set refresh rate
-        return setInterval(draw, speed);
+        //return setInterval(draw, speed);
+        requestAnimationFrame(draw);
     }
 
     function draw() {
@@ -207,21 +129,21 @@ function ImgCycle (ImgSrc){
 
           // draw additional image1
           if (x > 0) {
-              ctx.drawImage(img, -imgW * count + x, y, imgW, imgH);
+              ctx.drawImage(img, -img.width/2 * count + x, y, img.width/2, img.height/2);
           }
         //   count++
         // }
           // draw additional image2
           if (x - imgW > 0) {
-              ctx.drawImage(img, -imgW * 2 + x, y, imgW, imgH);
+              ctx.drawImage(img, -img.width/2 * 2 + x, y, img.width/2, img.height/2);
           }
-          // draw additional image2
+          // draw additional image3
           if (x - imgW > 0) {
-              ctx.drawImage(img, -imgW * 3 + x, y, imgW, imgH);
+              ctx.drawImage(img, -img.width/2 * 3 + x, y, img.width/2, img.height/2);
           }
-          // draw additional image2
+          // draw additional image4
           if (x - imgW > 0) {
-              ctx.drawImage(img, -imgW * 4 + x, y, imgW, imgH);
+              ctx.drawImage(img, -img.width/2 * 4 + x, y, img.width/2, img.height/2);
           }
       }
 
@@ -229,20 +151,22 @@ function ImgCycle (ImgSrc){
       else {
           // reset, start from beginning
           if (x > (CanvasXSize)) {
-              x = CanvasXSize - imgW;
+              x = CanvasXSize - img.width/2;
           }
           // draw aditional image
-          if (x > (CanvasXSize-imgW)) {
-              ctx.drawImage(img, x - imgW + 1, y, imgW, imgH);
+          if (x > (CanvasXSize-img.width/2)) {
+              ctx.drawImage(img, x - img.width/2 + 1, y, img.width/2, img.height/2);
           }
       }
       // draw image
-      ctx.drawImage(img, x, y,imgW, imgH);
+      ctx.drawImage(img, x, y, img.width/2, img.height/2);
       // amount to move
       x += dx;
-    }
-  }
-  
+
+      requestAnimationFrame(draw);
+    }//end of draw
+  }//end of img cyc
+
 /////////////////CHAT STUFF BELOW
 
 
@@ -273,6 +197,8 @@ function getStateOfChat(){
 	}
 }
 
+var intro;
+
 //Updates the chat
 function updateChat(){
 	 if(!instanse){
@@ -297,53 +223,65 @@ function updateChat(){
                                 // if($('#chat-mot').text().match('woods'||'beach'||'paris')){
                                 if($('#chat-mot').text().match('woods')){
                                   ImgCycle(woods);
+                                  intro = document.getElementById("intro");
+                                  intro.style.display = "none";
                                 }
                                 else if($('#chat-mot').text().match('beach')){
                                     ImgCycle(beach);
+                                    intro = document.getElementById("intro");
+                                    intro.style.display = "none";
                                   }
                                   else if($('#chat-mot').text().match('paris')){
                                       ImgCycle(paris);
+                                      intro = document.getElementById("intro");
+                                      intro.style.display = "none";
                                     }
                                 // }
                                 // else if($('#chat-mot').text().match('red'||'blue'||'purple')){
                                   else if($('#chat-mot').text().match('red')){
                                     var ImageSourceRed = 'images/red_left.png'
                                     var redX = 550;
-                                    var redY = 250;
-                                    charLoad(ImageSourceRed, redX, redY);
+                                    charLoad(ImageSourceRed, redX);
                                   }
                                   else if($('#chat-mot').text().match('blue')){
                                     var ImageSourceBlue = 'images/left_blue.png'
                                     var redX = 550;
-                                    var redY = 250;
-                                    charLoad(ImageSourceBlue, redX, redY);
+                                    charLoad(ImageSourceBlue, redX);
                                   }
                                   else if($('#chat-mot').text().match('purple')){
                                     var ImageSourcePurp = 'images/purple_left.png'
                                     var redX = 550;
-                                    var redY = 250;
-                                    charLoad(ImageSourcePurp, redX, redY);
+                                    charLoad(ImageSourcePurp, redX);
                                   }
                                 // }
 
                                 //else if($('#chat-mot').text().match('wolf'||'bear'||'unicorn')){
                                   else if($('#chat-mot').text().match('wolf')){
-                                    var ImageSourceWolf = 'images/wolf.png'
-                                    var redX = 360;
-                                    var redY = 250;
-                                    charLoad(ImageSourceWolf, redX, redY);
+                                    var ImageSourceWolf = 'images/wolf.png';
+                                    var redX = 50;
+                                    charLoad(ImageSourceWolf, redX);
+
+                                    var ImageSourceWolf2 = 'images/wolf_bed.png';
+                                    var redX2 = wid-2000;
+                                    charLoad(ImageSourceWolf2, redX2);
                                   }
                                   else if($('#chat-mot').text().match('bear')){
-                                    var ImageSourceBear = 'images/bear.png'
-                                    var redX = 320;
-                                    var redY = 250;
-                                    charLoad(ImageSourceBear, redX, redY);
+                                    var ImageSourceBear = 'images/bear.png';
+                                    var redX = 50;
+                                    charLoad(ImageSourceBear, redX);
+
+                                    var ImageSourceWolf2 = 'images/bear_bed.png';
+                                    var redX2 = wid-2000;
+                                    charLoad(ImageSourceWolf2, redX2);
                                   }
                                   else if($('#chat-mot').text().match('unicorn')){
-                                    var ImageSourceUni = 'images/unicorn.png'
-                                    var redX = 290;
-                                    var redY = 250;
-                                    charLoad(ImageSourceUni, redX, redY);
+                                    var ImageSourceUni = 'images/unicorn.png';
+                                    var redX = 50;
+                                    charLoad(ImageSourceUni, redX);
+
+                                    var ImageSourceWolf2 = 'images/unicorn_bed.png';
+                                    var redX2 = wid-2000;
+                                    charLoad(ImageSourceWolf2, redX2);
                                   }
                                 //}
                                 // else if($('#chat-mot').text().match('paris')){

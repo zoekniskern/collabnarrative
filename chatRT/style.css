@@ -95,7 +95,7 @@ body {
 }
 
 #storybook {
-  background-image: url(images/placeholder.jpg);
+  background-image: url(images/intro.png);
   height: 400px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -122,4 +122,17 @@ p {
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
+}
+
+/* VIEWER STYLING */
+#intro {
+  background-image: url(images/intro.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 99vh;
+  width: 99vw;
+  z-index: -20;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

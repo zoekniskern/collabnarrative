@@ -67,6 +67,8 @@
     <canvas id="canvasRed"></canvas>
     <canvas id="canvas"></canvas>
 
+    <div id="intro"></div>
+
     <div style = "display:none" id="chat-wrap">
       <div id="chat-area"> </div>
       <div id="chat-mot"> </div>
