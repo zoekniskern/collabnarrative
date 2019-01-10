@@ -258,6 +258,9 @@ function updateChat(){
                                       // function (e) {
                                       //     e1.removeClass('animate');
                                       // });
+                                      e1 = $('#slide');
+                                        e1.addClass('disapear');
+                                      
 
                                   }
                                   else if($('#chat-mot').text().match('blue')){

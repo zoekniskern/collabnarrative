@@ -195,10 +195,35 @@ p {
   from{transform: translateX(2500px);}
   to{transform: translateX(-2000px);}
   }
+
+
+/*
+  @keyframes lilHoodAnimExit {
+      from{transform: translateX(0px);}
+      to{transform: translateX(-2000px);}
+    }
+  @-webkit-keyframes lilHoodAnimExit {
+    from{transform: translateX(0px);}
+    to{transform: translateX(-2000px);}
+    }  */
+    @keyframes lilHoodAnimOpacity {
+       from { opacity: 1;}
+       to {opacity: 0;}
+     }
+
   .animateLilHood {
     /* -webkit-animation: lilHoodAnim 2s 2s linear both; */
-    animation: lilHoodAnim 2s 2s linear both;
+    animation: lilHoodAnim 2s 2s linear both, lilHoodAnimOpacity 2s 8s both;
   }
+  @keyframes lilHoodAnimOpacity {
+     from { opacity: 1;}
+     to {opacity: 0;}
+   }
+  /* .disapear {
+        animation: lilHoodAnimOpacity 5s 10s both;
+  } */
+
+
 
   @keyframes creatureAnim {
       from{transform: translateX(-1500px);}
@@ -210,7 +235,7 @@ p {
     }
     .animateCreature {
       /* -webkit-animation: lilHoodAnim 2s 2s linear both; */
-      animation: creatureAnim 2s 2s linear both;
+      animation: creatureAnim 2s 2s linear both, lilHoodAnimOpacity 2s 6s both;
     }
     @keyframes houseAnim {
         from{transform: translateX(-1500px);}
