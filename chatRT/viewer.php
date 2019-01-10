@@ -13,21 +13,6 @@
     <script type="text/javascript" src="chat.js"></script>
     <script type="text/javascript">
 
-        // ask user for name with popup prompt
-        /*
-      var name = prompt("Enter your chat name:", "Guest");
-
-        // default name is 'Guest'
-    	if (!name || name === ' ') {
-    	   name = "Guest";
-    	}
-
-    	// strip tags
-    	name = name.replace(/(<([^>]+)>)/ig,"");
-
-    	// display name on page
-    	$("#name-area").html("You are: <span>" + name + "</span>");
-      */
 
     	// kick off chat
         var chat =  new Chat();
@@ -35,7 +20,6 @@
 
     		 chat.getState();
 
-         // watch textarea for key presses
          // watch textarea for key presses
              $(".sendie").click(function(event) {
                   var key = $("input[name='values']:checked").val();
@@ -72,28 +56,17 @@
                   //  } else {
 
            //	$(this).val(text.substring(0, maxLength));
-
          //	}
-
-
            //}
              });
-
     	});
-
     </script>
-
-
 </head>
-
 <body onload="setInterval('chat.update()', 1000)">
 
+    <canvas id="canvasRed"></canvas>
+    <canvas id="canvas"></canvas>
 
-    <canvas id="canvas" width=innerWidth height=innerHeight ></canvas>
-    <canvas id="canvasRed" width=innerWidth height=innerHeight ></canvas>
-<!--
-
-    <p id="name-area"></p> -->
     <div style = "display:none" id="chat-wrap">
       <div id="chat-area"> </div>
       <div id="chat-mot"> </div>
