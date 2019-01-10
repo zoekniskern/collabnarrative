@@ -560,3 +560,17 @@ blue
 bear
 woods
 red
+beach
+blue
+bear
+woods
+beach
+red
+beach
+red
+beach
+red
+beach
+red
+beach
+red
