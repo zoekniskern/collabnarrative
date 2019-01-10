@@ -99,9 +99,9 @@
 <body onload="setInterval('chat.update()', 1000)">
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="writer.php" target="_blank" style="color:orange;">The Writer</a>
-      <a href="reader.php" target="_blank" style="color:orange;">The Reader</a>
-      <a href="viewer.php" target="_blank" style="color:orange;">The Viewer</a>
+      <a href="writer.php" target="_blank">The Writer</a>
+      <a href="reader.php" target="_blank">The Reader</a>
+      <a href="viewer.php" target="_blank">The Viewer</a>
     </div>
 
     <div id="main">
@@ -110,14 +110,16 @@
 
     <div id="page-wrap">
 
-        <h1 align="center">COLLABORATIVE NARRATIVE</h1>
+        <h1 id="title" align="center">Collaborative Narrative</h1>
         <div class="wrapper">
-        <p align="center" >
-          This is a collaborative narrative written by you and the other people
-          visiting this exhibition. <br> You will be asked questions and your answers will
-          tell a new and unique version of <br> the story of Little Red Riding Hood.
-        </p>
-        <button class="BeginButton" onclick="location.href='writer.php'" target="_blank" style="width:300px;height:20px; alt="start button""> Begin</button>
+            <div id="storybook">
+            </div>
+            <p>
+            This is a collaborative narrative written by you and the other people
+            visiting this exhibition. <br> You will be asked questions and your answers will
+            tell a new and unique version of <br> the story of Little Red Riding Hood.
+            </p>
+            <button class="BeginButton" onclick="location.href='writer.php'" target="_blank" alt="start button""> Begin</button>
         </div>
 
     </div>

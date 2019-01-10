@@ -1,17 +1,17 @@
 [
     {
         "label": "place",
-        "question": "what place?",
+        "question": "Pick a place:",
         "options": ["woods", "beach", "paris"]
     },
     {
         "label": "color",
-        "question": "what color?",
+        "question": "Which color?",
         "options": ["red", "blue", "purple"]
     },
     {
         "label": "creature",
-        "question": "creature?",
+        "question": "What creature?",
         "options": ["wolf", "bear", "unicorn"]
     }
 ]

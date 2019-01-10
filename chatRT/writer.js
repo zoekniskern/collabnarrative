@@ -22,6 +22,7 @@ var currentQuestion = 0;
 var totalquestions;
 var whichVar;
 var promptDiv; // = document.getElementById("prompt");
+var endingDiv;
 
 //Story Variables
 var homeList;
@@ -57,6 +58,7 @@ function makeButtons(jsonObj, number) {
     var options = currentQuestion.options;
 
     var title = document.createElement("h3");
+    var br = document.createElement("br");
     title.innerHTML = currentQuestion.question;
 
     //--create label
@@ -70,16 +72,19 @@ function makeButtons(jsonObj, number) {
     //-- create input for each option
     for(var y=0; y<options.length; y++) {
         var label = document.createElement("label");
+        label.setAttribute('id', options[y] + "-lab");
+        label.setAttribute('class', options[y]);
+        label.setAttribute('for', options[y]);
+
         input = document.createElement("input");
-
         input.setAttribute("type", "radio");
-
         input.setAttribute('name', "values");
         input.setAttribute('value', options[y]);
+        input.setAttribute('id', options[y]);
 
-        label.appendChild(input);
-        label.innerHTML += "<span>" + options[y] + "</span><br>";
-        
+        // label.appendChild(input);
+        // label.innerHTML += "<span>" + options[y] + "</span><br>";
+        form.appendChild(input);
         form.appendChild(label);
     }
 
@@ -87,19 +92,20 @@ function makeButtons(jsonObj, number) {
         //if question is even, give to player 1
         htmlDestination = document.getElementById("question1");
         div1.innerHTML = "";
-        div2.innerHTML = "Please Wait";
+        div2.innerHTML = "<div id='wait'><p>Please Wait</p></div>";
         button1.style.display = "block";
         button2.style.display = "none";
     } else {
         //if question is odd, give to player 2
         htmlDestination = document.getElementById("question2");
-        div1.innerHTML = "Please Wait";
+        div1.innerHTML = "<div id='wait'><p>Please Wait</p></div>";
         div2.innerHTML = "";
         button1.style.display = "none";
         button2.style.display = "block";
     }
     htmlDestination.innerHTML = "";
     htmlDestination.appendChild(title);
+    htmlDestination.appendChild(br);
     htmlDestination.appendChild(form);
 }
 
@@ -179,6 +185,12 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+//SHOW ENDING DIV
+function showEnding(){
+    endingDiv.style.display = "block";
+    promptDiv.style.display = "none";
+}
+
 
 //INIT FUNCTION
 function init() {
@@ -186,6 +198,7 @@ function init() {
     color = default_color;
     creature = default_creature;
     promptDiv = document.getElementById("prompt");
+    endingDiv = document.getElementById("ending");
     loadJSON(function(response) {
      // Parse JSON string into object
        var actual_JSON = JSON.parse(response);
@@ -200,4 +213,17 @@ function init() {
 
 //RUN INIT FUNCTION
 window.onload = init();
+
+//SIDE NAV
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("promptSide").style.width = "500px";
+    document.getElementById("main").style.marginLeft = "500px";
+  }
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("promptSide").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
  
