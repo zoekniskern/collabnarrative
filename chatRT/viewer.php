@@ -90,14 +90,15 @@
 
 
     <canvas id="canvas" width=innerWidth height=innerHeight ></canvas>
+    <canvas id="canvasRed" width=innerWidth height=innerHeight ></canvas>
 <!--
 
     <p id="name-area"></p> -->
-
-    <div id="chat-wrap">
+    <div style = "display:none" id="chat-wrap">
       <div id="chat-area"> </div>
       <div id="chat-mot"> </div>
     </div>
+
 </body>
 
 </html>
