@@ -560,3 +560,6 @@ blue
 bear
 woods
 red
+woods
+red
+wolf
