@@ -95,7 +95,7 @@ body {
 }
 
 #storybook {
-  background-image: url(images/placeholder.jpg);
+  background-image: url(images/intro.png);
   height: 400px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -122,4 +122,117 @@ p {
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
+}
+#slide{
+  position: absolute;
+  top: 370px;
+  left: 2500px;
+  width: 301.5px;
+  height: 397px;
+}
+#slideP{
+  position: absolute;
+  top: 370px;
+  left: 2500px;
+  width: 301.5px;
+  height: 397px;
+}
+#slideB{
+  position: absolute;
+  top: 370px;
+  left: 2500px;
+  width: 301.5px;
+  height: 397px;
+}
+#slideBear{
+  position: absolute;
+  top: 320px;
+  left: -1500px;
+  width: 295.5px;
+  height: 468px;
+}
+#slideUni{
+  position: absolute;
+  top: 320px;
+  left: -1500px;
+  width: 301.5px;
+  height: 397px;
+}
+#slideWolf{
+  position: absolute;
+  top: 320px;
+  left: -1500px;
+  width: 301.5px;
+  height: 397px;
+}
+#slideBearHouse{
+  position: absolute;
+  top: 20px;
+  left: -2500px;
+  width: 2040px;
+  height: 786px;
+}
+#slideWolfHouse{
+  position: absolute;
+  top: 20px;
+  left: -2500px;
+  width: 2040px;
+  height: 786px;
+}
+#slideUniHouse{
+  position: absolute;
+  top: 20px;
+  left: -2500px;
+  width: 2040px;
+  height: 786px;
+}
+
+@keyframes lilHoodAnim {
+    from{transform: translateX(2500px);}
+    to{transform: translateX(-2000px);}
+  }
+@-webkit-keyframes lilHoodAnim {
+  from{transform: translateX(2500px);}
+  to{transform: translateX(-2000px);}
+  }
+  .animateLilHood {
+    /* -webkit-animation: lilHoodAnim 2s 2s linear both; */
+    animation: lilHoodAnim 2s 2s linear both;
+  }
+
+  @keyframes creatureAnim {
+      from{transform: translateX(-1500px);}
+      to{transform: translateX(1800px);}
+    }
+  @-webkit-keyframes creatureAnim {
+    from{transform: translateX(-1500px);}
+    to{transform: translateX(1800px);}
+    }
+    .animateCreature {
+      /* -webkit-animation: lilHoodAnim 2s 2s linear both; */
+      animation: creatureAnim 2s 2s linear both;
+    }
+    @keyframes houseAnim {
+        from{transform: translateX(-1500px);}
+        to{transform: translateX(2500px);}
+      }
+    @-webkit-keyframes houseAnim {
+      from{transform: translateX(-1500px);}
+      to{transform: translateX(2500px);}
+      }
+      .animatehouse {
+        /* -webkit-animation: lilHoodAnim 2s 2s linear both; */
+        animation: houseAnim 15s 2s linear both;
+      }
+/* VIEWER STYLING */
+#intro {
+  background-image: url(images/intro.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 99vh;
+  width: 99vw;
+  z-index: -20;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

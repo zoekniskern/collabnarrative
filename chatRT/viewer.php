@@ -8,7 +8,7 @@
     <title>Chat</title>
 
     <link rel="stylesheet" href="style.css" type="text/css" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="chat.js"></script>
     <script type="text/javascript">
@@ -61,17 +61,30 @@
              });
     	});
     </script>
+
 </head>
 <body onload="setInterval('chat.update()', 1000)">
 
-    <canvas id="canvasRed"></canvas>
+    <canvas id="canvasRed">
+
+    </canvas>
     <canvas id="canvas"></canvas>
+
+    <div id="intro"></div>
 
     <div style = "display:none" id="chat-wrap">
       <div id="chat-area"> </div>
       <div id="chat-mot"> </div>
     </div>
-
+    <img id="slide" src="images/red_left.png" />
+    <img id="slideB" src="images/left_blue.png" />
+    <img id="slideP" src="images/purple_left.png" />
+    <img id="slideBear" src="images/bear.png" />
+    <img id="slideUni" src="images/unicorn.png" />
+    <img id="slideWolf" src="images/wolf.png" />
+    <img id="slideBearHouse" src="images/bear_bed.png" />
+    <img id="slideUniHouse" src="images/unicorn_bed.png" />
+    <img id="slideWolfHouse" src="images/wolf_bed.png" />
 </body>
 
 </html>
