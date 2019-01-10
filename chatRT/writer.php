@@ -56,6 +56,36 @@
     			  //}
              });
 
+             $('.sendie').click(function(e) {
+    			  //if (e.keyCode == 13) {
+                    var text = $("input[name='values']:checked").val();
+    				//var maxLength = $(this).attr("maxlength");
+                    //var length = text.length;
+                    // send
+                  //if (length <= maxLength + 1) {
+    			        chat.send(text, name);
+    			        $(this).val("");
+                  //  } else {
+    				//	$(this).val(text.substring(0, maxLength));
+    			//	}
+                  //}
+                  
+            //THIS FUNCTION IS FOR SENDING THE PROMPT TEXT
+             }); $('#finish').click(function(e) {
+    			  //if (e.keyCode == 13) {
+                    var text = $("textarea[name='Text1']").val();
+    				//var maxLength = $(this).attr("maxlength");
+                    //var length = text.length;
+                    // send
+                  //if (length <= maxLength + 1) {
+    			        chat.send(text, name);
+    			        $(this).val("");
+                  //  } else {
+    				//	$(this).val(text.substring(0, maxLength));
+    			//	}
+    			  //}
+             });
+
     	});
     </script>
 </head>
@@ -131,7 +161,7 @@
 
         <br/>
 
-        <button id="finish" class="button" onclick="">The End!</button>
+        <a href="index.php"> <button id="finish" class="button" >The End!</button> </a>
     </div>
 <!-- Chat wrap because it might error if deleted -->
 </body>
