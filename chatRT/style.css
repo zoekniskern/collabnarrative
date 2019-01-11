@@ -123,6 +123,13 @@ p {
   margin-left: 0;
   margin-right: 0;
 }
+#mother{
+  position: absolute;
+  top: 0px;
+  left: -406px;
+  width: 406px;
+  height: 769px;
+}
 #slide{
   position: absolute;
   top: 370px;
@@ -146,56 +153,94 @@ p {
 }
 #slideBear{
   position: absolute;
-  top: 320px;
+  top: 345px;
   left: -1500px;
   width: 295.5px;
   height: 468px;
 }
 #slideUni{
   position: absolute;
-  top: 320px;
+  top: 345px;
   left: -1500px;
   width: 301.5px;
   height: 397px;
 }
 #slideWolf{
   position: absolute;
-  top: 320px;
+  top: 345px;
   left: -1500px;
   width: 301.5px;
   height: 397px;
 }
 #slideBearHouse{
   position: absolute;
-  top: 20px;
+  top: 178px;
   left: -2500px;
-  width: 2040px;
-  height: 786px;
+  width: 1024px;
+  height: 590px;
 }
 #slideWolfHouse{
   position: absolute;
-  top: 20px;
+  top: 178px;
   left: -2500px;
-  width: 2040px;
-  height: 786px;
+  width: 1024px;
+  height: 590px;
 }
 #slideUniHouse{
   position: absolute;
-  top: 20px;
+  top: 178px;
   left: -2500px;
-  width: 2040px;
-  height: 786px;
+  width: 1024px;
+  height: 590px;
 }
 
-@keyframes lilHoodAnim {
+/* BELOW IS THE WORKING CODE< COMMENT BACK IN IF DOES NOT WORK */
+/* @keyframes lilHoodAnim {
     from{transform: translateX(2500px);}
     to{transform: translateX(-2000px);}
   }
 @-webkit-keyframes lilHoodAnim {
   from{transform: translateX(2500px);}
   to{transform: translateX(-2000px);}
+  } */
+
+.houseAppear{
+    -webkit-animation: animateMother 10s ease 0s;
+    -webkit-animation-iteration-count:1;
+    animation: animateMother 10s ease 0s;
+    animation-iteration-count:1;
+}
+
+@keyframes animateMother {
+  0%{left:-206px;} 
+  50%{left:0;} 
+  100%{left:-406;}
+}
+
+@-webkit-keyframes animateMother {
+  0%{left:-406px;} 
+  50%{left:0;} 
+  100%{left:-406;}
+}
+
+.animateLilHood{
+    -webkit-animation: animateLilHood 20s ease 0s;
+    -webkit-animation-iteration-count:infinite;
+    animation: animateLilHood 20s ease 0s;
+    animation-iteration-count:infinite;
+}
+
+@keyframes animateLilHood {
+    0%{left:300px;} 
+    50%{left:100%;} 
+    100%{left:300px;}
   }
 
+@-webkit-keyframes animateLilHood {
+  0%{left:300px;} 
+  50%{left:100%;} 
+  100%{left:300px;}
+}
 
 /*
   @keyframes lilHoodAnimExit {
@@ -207,31 +252,29 @@ p {
     to{transform: translateX(-2000px);}
     }  */
     @keyframes lilHoodAnimOpacity {
-       from { opacity: 1;}
-       to {opacity: 0;}
+       /* from { opacity: 1;}
+       to {opacity: 0;} */
      }
 
   .animateLilHood {
     /* -webkit-animation: lilHoodAnim 2s 2s linear both; */
-    animation: lilHoodAnim 2s 2s linear both, lilHoodAnimOpacity 2s 8s both;
+    /* animation: lilHoodAnim 2s 2s linear both, lilHoodAnimOpacity 2s 8s both; */
   }
   @keyframes lilHoodAnimOpacity {
-     from { opacity: 1;}
-     to {opacity: 0;}
+     /* from { opacity: 1;}
+     to {opacity: 0;} */
    }
   /* .disapear {
         animation: lilHoodAnimOpacity 5s 10s both;
   } */
 
-
-
   @keyframes creatureAnim {
       from{transform: translateX(-1500px);}
-      to{transform: translateX(1800px);}
+      to{transform: translateX(1700px);}
     }
   @-webkit-keyframes creatureAnim {
     from{transform: translateX(-1500px);}
-    to{transform: translateX(1800px);}
+    to{transform: translateX(1700px);}
     }
     .animateCreature {
       /* -webkit-animation: lilHoodAnim 2s 2s linear both; */
@@ -249,6 +292,7 @@ p {
         /* -webkit-animation: lilHoodAnim 2s 2s linear both; */
         animation: houseAnim 15s 2s linear both;
       }
+
 /* VIEWER STYLING */
 #intro {
   background-image: url(images/intro.png);

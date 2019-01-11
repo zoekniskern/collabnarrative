@@ -76,15 +76,16 @@
       <div id="chat-area"> </div>
       <div id="chat-mot"> </div>
     </div>
+    <img id="mother" src="images/mother.png" />
     <img id="slide" src="images/red_left.png" />
     <img id="slideB" src="images/left_blue.png" />
     <img id="slideP" src="images/purple_left.png" />
-    <img id="slideBear" src="images/bear.png" />
-    <img id="slideUni" src="images/unicorn.png" />
-    <img id="slideWolf" src="images/wolf.png" />
-    <img id="slideBearHouse" src="images/bear_bed.png" />
-    <img id="slideUniHouse" src="images/unicorn_bed.png" />
-    <img id="slideWolfHouse" src="images/wolf_bed.png" />
+    <img id="slideBear" class="creature" src="images/bear.png" />
+    <img id="slideUni" class="creature" src="images/unicorn.png" />
+    <img id="slideWolf" class="creature" src="images/wolf.png" />
+    <img id="slideBearHouse" src="images/bear_smallhouse.png" />
+    <img id="slideUniHouse" src="images/unicorn_smallhouse.png" />
+    <img id="slideWolfHouse" src="images/wolf_smallhouse.png" />
 </body>
 
 </html>

@@ -9,7 +9,7 @@ var instanse = false;
 var state;
 var mes;
 var file;
-var wid = 2048;
+var wid = 2048/2;
 var hei = 1536/2;
 var widRed = (616);
 var heiRed = (755);
@@ -207,6 +207,7 @@ function getStateOfChat(){
 }
 
 var intro;
+var mother;
 
 //Updates the chat
 function updateChat(){
@@ -251,7 +252,8 @@ function updateChat(){
                                     // var ImageSourceRed = 'images/red_left.png'
                                     // var redX = 550;
                                     // charLoad(ImageSourceRed, redX);
-
+                                    mother = document.getElementById("mother");
+                                    mother.setAttribute('class','houseAppear');
                                     e1 = $('#slide');
                                       e1.addClass('animateLilHood');
                                       // e1.one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
@@ -267,6 +269,8 @@ function updateChat(){
                                     // var ImageSourceBlue = 'images/left_blue.png'
                                     // var redX = 550;
                                     // charLoad(ImageSourceBlue, redX);
+                                    mother = document.getElementById("mother");
+                                    mother.setAttribute('class','houseAppear');
                                     e1 = $('#slideB');
                                       e1.addClass('animateLilHood');
                                   }
@@ -274,6 +278,8 @@ function updateChat(){
                                     // var ImageSourcePurp = 'images/purple_left.png'
                                     // var redX = 550;
                                     // charLoad(ImageSourcePurp, redX);
+                                    mother = document.getElementById("mother");
+                                    mother.setAttribute('class','houseAppear');
                                     e1 = $('#slideP');
                                       e1.addClass('animateLilHood');
                                   }
